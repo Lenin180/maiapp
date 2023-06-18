@@ -1,0 +1,7 @@
+{
+  "name": "maiapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
