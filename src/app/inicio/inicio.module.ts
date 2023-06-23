@@ -14,6 +14,6 @@ import { HttpClientModule } from '@angular/common/http';
     InicioPageRoutingModule,
     HttpClientModule 
   ],
-  declarations: [InicioPage]
+  declarations: [InicioPage],
 })
 export class InicioPageModule {}

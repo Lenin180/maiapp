@@ -12,9 +12,14 @@
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
-  <ion-header >
+  <ion-card>
 
-  </ion-header>
+    <ion-card-content>
+      <p>Nombre: {{ fullname }}</p>
+      <p>Email: {{ emailU }}</p>
+    </ion-card-content>
+    
+  </ion-card>
 
   <ion-button (click)="redirectToCred()">Creditos 
     <ion-icon name="school-outline"></ion-icon>
