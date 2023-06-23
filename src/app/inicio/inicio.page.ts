@@ -56,7 +56,9 @@ export class InicioPage implements OnInit {
     }
   logout() {
     // Redirigir a la página de inicio de sesión
+    this.cookieService.deleteAll();
     this.router.navigateByUrl('/home');
+
   }
 }
 
