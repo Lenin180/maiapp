@@ -1,16 +1,7 @@
 <ion-header [translucent]="true">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  
-  <ion-toolbar>
-    <ion-title>inicio</ion-title>
-    <ion-buttons slot="end">
-      <ion-button color="primary" (click)="logout()">Logout
-        <ion-icon name="log-out-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
 <ion-content [fullscreen]="true">
+  <div id="circle"></div>
   <ion-card color="light">
     <ion-card-content>
       <p><ion-icon name="person-outline"></ion-icon> &nbsp;{{ fullname }}</p>
@@ -52,9 +43,9 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  
-
-  
+  <ion-button color="primary" (click)="logout()">Logout
+    <ion-icon name="log-out-outline"></ion-icon>
+  </ion-button>
 </ion-content>
 
 

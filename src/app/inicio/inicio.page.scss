@@ -11,6 +11,8 @@ ion-card{
     margin-left: 7%;
     margin-right: 7%;
     margin-bottom: 20%;
+    position: absolute;
+    top: 15vh;
 }
 .hbutton{
     height: 50vmin;
@@ -24,4 +26,15 @@ button{
 }
 .isize{
     font-size: 6rem;
+    color: white;
+}
+#circle {
+    background: #e0254a;
+    border-radius: 50%;
+    width: 150vw;
+    height: 70vh;
+    right: 24.6vw;
+    top: -45vh;
+    position: relative;
+    margin: 0;
 }
