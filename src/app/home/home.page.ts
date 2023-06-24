@@ -66,6 +66,7 @@ export class HomePage {
           console.log('Futuro pop-up para usuario no valido');
         }
       }
+      
     );
 
   }
@@ -74,6 +75,7 @@ export class HomePage {
   public guardarDatosJWT(access: string, refresh: string): void {
     //Guardar en el local
     localStorage.setItem('access_token', access);
+    this.cookieService.set('access_tokenk', access);
     localStorage.setItem('refresh_token', refresh);
     
     // imprimir
@@ -87,11 +89,8 @@ export class HomePage {
     const url = `https://platform-api.aaaimx.org/api/v1/users/me/`;
     console.log('user_id', id);
     // Obtener el token de acceso del almacenamiento local
-    const accessToken = localStorage.getItem('access_token');
-    console.log('Access Token:', accessToken);
+    const accessToken = localStorage.getItem('access_token');   
     //console.log('Access Token:', accessToken);
-    
-
     const body = {
       id: id,
     };
