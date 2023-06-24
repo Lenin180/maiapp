@@ -1,12 +1,21 @@
-<ion-content [fullscreen]="true">
-  
-   
- 
-  <ion-card color="light">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<ion-header [translucent]="true">
+  <ion-toolbar>
 
-    
+    <ion-title>inicio</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button color="primary" (click)="logout()">Cerrar sesión&nbsp;
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div id="circle"></div>
+  <ion-card color="light">
     <ion-card-content>
-      
       <p> {{ full_name  }}  {{ first_lastname }} {{ second_lastname }}  </p> 
       <p>{{ emailU }}</p>
       <p> {{ occupation}}</p>
@@ -23,14 +32,14 @@
         <button (click)="redirectToCred()" class="hbutton" color="primary">
           <ion-icon class="isize" name="school-outline"></ion-icon>
           <br />
-          Créditos complementarios
+          <span class="colorw">Créditos complementarios</span>
         </button>
       </ion-col>
       <ion-col size="5">
         <button (click)="redirectToUrl()" class="hbutton" color="primary">
           <ion-icon class="isize" name="file-tray-full-outline"></ion-icon> 
           <br />
-          Banco de proyectos
+          <span class="colorw">Banco de proyectos</span>
         </button>
       </ion-col>
     </ion-row>
@@ -39,21 +48,18 @@
           <button class="hbutton" color="primary">
             <ion-icon class="isize" name="book-outline"></ion-icon>
           <br />
-          Cuestionarios
+          <span class="colorw">Cuestionarios</span>
           </button>
       </ion-col>
       <ion-col size="5">
         <button class="hbutton" color="primary">
           <ion-icon class="isize" name="person-add-outline"></ion-icon>
         <br />
-        Editar perfil
+        <span class="colorw">Editar perfil</span>
         </button>
       </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-button color="primary" (click)="logout()">Logout
-    <ion-icon name="log-out-outline"></ion-icon>
-  </ion-button>
 </ion-content>
 
 

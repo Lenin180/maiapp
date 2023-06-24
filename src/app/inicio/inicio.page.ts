@@ -35,6 +35,14 @@ export class InicioPage implements OnInit {
     this.genpicture();
     this.getcreditos();
 
+<<<<<<< HEAD
+=======
+    
+  }
+  ionViewDidEnter() {
+    // Llama al método que deseas ejecutar siempre al mostrar la página
+    this.getcookies();
+>>>>>>> d463caeebb9b58910bad715881bc9fa95c49b51d
   }
 
 
@@ -70,10 +78,15 @@ export class InicioPage implements OnInit {
   
   
 
+<<<<<<< HEAD
   ngOnInit() {}
   
   getcreditos() {
     const url = `https://platform-api.aaaimx.org/api/v1/complementaryCredit/credits/${this.id}`;
+=======
+  ngOnInit() {
+    
+>>>>>>> d463caeebb9b58910bad715881bc9fa95c49b51d
 
     // Define los encabezados de la solicitud
     const headers = new HttpHeaders({
