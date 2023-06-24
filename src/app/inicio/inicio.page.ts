@@ -20,7 +20,8 @@ export class InicioPage implements OnInit {
   first_lastname!: string;
   second_lastname!: string;
   admission!: string;
-  
+  firstLetter2!: string;
+  firstLetter!: string;
   constructor(private router: Router, private http:HttpClient, private cookieService: CookieService ) { 
 
     
@@ -28,6 +29,8 @@ export class InicioPage implements OnInit {
   ionViewDidEnter() {
     // Llama al método que deseas ejecutar siempre al mostrar la página
     this.getcookies();
+    this.genpicture();
+
   }
 
 
@@ -45,6 +48,13 @@ export class InicioPage implements OnInit {
     //console.log('Nombre estudiante', this.fullname);
     console.log('Email estudiante', this.emailU);
   
+    }
+
+    genpicture(){
+      const firstLetter = this.full_name.charAt(0);
+      console.log('Primera letra:', firstLetter);
+      const firstLetter2 = this.first_lastname.charAt(0);
+      console.log('Primera letra:', firstLetter2);
     }
   
   

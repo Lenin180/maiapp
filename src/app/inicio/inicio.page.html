@@ -14,6 +14,13 @@
 </ion-header>
 <ion-content [fullscreen]="true">
   <div id="circle"></div>
+  <div class="contenedor">
+    <p class="ion-text-center">
+      <ion-avatar class="avatar centered-avatar" *ngIf="full_name && first_lastname">
+      <p>{{ full_name.charAt(0) }}{{ first_lastname.charAt(0) }}</p>
+    </ion-avatar>
+    </p>
+  </div>
   <ion-card color="light" class="">
     <ion-card-content class="ion-text-center">
       <p cl><ion-icon name="person-outline"></ion-icon>&nbsp;{{ full_name  }}  {{ first_lastname }} {{ second_lastname }}</p> 
@@ -21,6 +28,7 @@
       <p><ion-icon name="construct-outline"></ion-icon>&nbsp;{{ career}}</p>
       <p><ion-icon name="color-wand-outline"></ion-icon>&nbsp;{{ admission}}°Ingreso </p>
       <p><ion-chip>{{occupation}}</ion-chip><ion-chip>{{specialty}}</ion-chip></p>
+      
     </ion-card-content>
   </ion-card>
   
@@ -51,7 +59,7 @@
       </ion-col>
       <ion-col size="5">
         <button class="hbutton" color="primary">
-          <ion-icon class="isize" name="person-add-outline"></ion-icon>
+          <i class="fa-light fa-pencil"></i>
         <br />
         <span class="colorw">Editar perfil</span>
         </button>
