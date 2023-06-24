@@ -10,25 +10,33 @@ import { CookieService } from 'ngx-cookie-service';
   
 })
 export class InicioPage implements OnInit {
-  //id: string;
+
   fullname!: string;
   emailU!: string;
-  //id: String;
-
+  occupation!: string;
+  career!: string; 
+  specialty!: string;
+  full_name!: string;
+  first_lastname!: string;
+  second_lastname!: string;
+  admission!: string;
+  
   constructor(private router: Router, private http:HttpClient, private cookieService: CookieService ) { 
-    //Llama en loca storage el item "access_token" 
-    //console.log(localStorage.getItem('access_token'))
-    //Esto va a servir adelante 
-    //this.id = this.cookieService.get('user_id');
-    //console.log('id_usuario:', this.id);
 
-    //Obteniendo valores para mostrar en el html de perfil 
-    
+   
   }
     getcookies(){
       this.fullname = this.cookieService.get('fullnameU');
-    this.emailU = this.cookieService.get('emailU');
-    console.log('Nombre estudiante', this.fullname);
+      this.emailU = this.cookieService.get('emailU');
+      this.occupation = this.cookieService.get('Ocupacion');
+      this.career = this.cookieService.get('Carrera');
+      this.specialty  = this.cookieService.get('Especialidad');
+      this.full_name = this.cookieService.get('Nombres');
+      this.first_lastname = this.cookieService.get('Ape1');
+      this.second_lastname = this.cookieService.get('Ape2');
+      this.admission = this.cookieService.get('Ingreso');
+
+    //console.log('Nombre estudiante', this.fullname);
     console.log('Email estudiante', this.emailU);
   
     }
@@ -48,6 +56,11 @@ export class InicioPage implements OnInit {
   redirectToCred() {
     //FUNCIONAA (ASI HACER PARA pasar el id mańana)
     //console.log(localStorage.getItem('access_token'))
+    
+
+
+
+
 
     
   this.router.navigateByUrl('/creditos');
@@ -58,7 +71,10 @@ export class InicioPage implements OnInit {
     // Redirigir a la página de inicio de sesión
     this.cookieService.deleteAll();
     this.router.navigateByUrl('/home');
-
   }
-}
 
+
+
+
+  
+}

@@ -21,11 +21,14 @@ export class HomePage {
   fullname!: string;
   emailU!: string;
 
-  constructor(private http:HttpClient, private router: Router, private cookieService: CookieService) {}
+  constructor(private http:HttpClient, private router: Router, private cookieService: CookieService) {
+    
+  }
  
 
   
    public login() {
+    
     const url = 'https://platform-api.aaaimx.org/api/v1/token/'; // Reemplaza con la URL de tu API de inicio de sesión
   
     const body = {
@@ -48,7 +51,7 @@ export class HomePage {
         const fullname = decodedToken.fullname;
         const emailU = decodedToken.email;
         this.cookieService.set('user_id', id);
-        this.cookieService.set('fullnameU', fullname);
+        //this.cookieService.set('fullnameU', fullname);
         this.cookieService.set('emailU', emailU);
         
         
@@ -74,17 +77,18 @@ export class HomePage {
     localStorage.setItem('refresh_token', refresh);
     
     // imprimir
-    console.log('Access Token:', access);
+    //console.log('access Token:', access);
     //console.log('Refresh Token:', refresh);
   }
 
   public getUserData() {
     
     const id = this.cookieService.get('user_id');
-    const url = `http://platform-api.aaaimx.org/api/v1/users/me/`;
+    const url = `https://platform-api.aaaimx.org/api/v1/users/me/`;
     console.log('user_id', id);
     // Obtener el token de acceso del almacenamiento local
     const accessToken = localStorage.getItem('access_token');
+    console.log('Access Token:', accessToken);
     //console.log('Access Token:', accessToken);
     
 
@@ -103,6 +107,46 @@ export class HomePage {
         (response: any) => {
           // Lógica para manejar la respuesta exitosa
           console.log(response);
+
+          //Si la variable guarda un string '' sustituyelo con ''
+          let occupation = response.occupation
+          if (occupation === 'STUDENT') {
+            occupation= 'Estudiante';
+          }
+          console.log('Ocupacion:', occupation);
+          this.cookieService.set('Ocupacion', occupation);
+
+          //este es para entrar a un apartado en especifico 
+          //
+          let career = response.student.career;
+          if (career === 'ISC') {
+            career = 'Ingeniería en Sistemas Computacionales';
+          }
+          console.log('Carrera:', career);
+          this.cookieService.set('Carrera', career);
+          //especialidad
+          const specialty = response.student.specialty;
+          console.log('Especialidad:', specialty);
+          this.cookieService.set('Especialidad', specialty);
+          //ingreso
+          const admission = response.student.admission;
+          console.log('ingreso:', admission);
+          this.cookieService.set('Ingreso', admission);
+
+          //nombre 
+          const full_name = response.full_name ;
+          console.log('Nombres', full_name );
+          this.cookieService.set('Nombres', full_name);
+          const first_lastname = response.first_lastname ;
+          console.log('Ap1:', first_lastname );
+          this.cookieService.set('Ape1', first_lastname);
+          const second_lastname = response.second_lastname;
+          console.log('Ap2', second_lastname);
+          this.cookieService.set('Ape2', second_lastname);
+
+
+
+
         },
         (error) => {
           // Lógica para manejar el error
@@ -118,4 +162,3 @@ export class HomePage {
 
   
 }
-
