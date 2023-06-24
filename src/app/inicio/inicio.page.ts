@@ -23,8 +23,14 @@ export class InicioPage implements OnInit {
   
   constructor(private router: Router, private http:HttpClient, private cookieService: CookieService ) { 
 
-   
+    
   }
+  ionViewDidEnter() {
+    // Llama al método que deseas ejecutar siempre al mostrar la página
+    this.getcookies();
+  }
+
+
     getcookies(){
       this.fullname = this.cookieService.get('fullnameU');
       this.emailU = this.cookieService.get('emailU');
@@ -44,7 +50,7 @@ export class InicioPage implements OnInit {
   
 
   ngOnInit() {
-    this.getcookies();
+    
 
   } 
    //Boton bancode proyectos 
@@ -69,7 +75,7 @@ export class InicioPage implements OnInit {
     }
   logout() {
     // Redirigir a la página de inicio de sesión
-    this.cookieService.deleteAll();
+   // this.cookieService.deleteAll();
     this.router.navigateByUrl('/home');
   }
 
