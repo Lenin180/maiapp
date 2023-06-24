@@ -1,37 +1,59 @@
 <ion-header [translucent]="true">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  
   <ion-toolbar>
-
     <ion-title>inicio</ion-title>
-
     <ion-buttons slot="end">
       <ion-button color="primary" (click)="logout()">Logout
         <ion-icon name="log-out-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
-  <ion-card>
-
+  <ion-card color="light">
     <ion-card-content>
-      <p>Nombre: {{ fullname }}</p>
-      <p>Email: {{ emailU }}</p>
+      <p><ion-icon name="person-outline"></ion-icon> &nbsp;{{ fullname }}</p>
+      <p><ion-icon name="mail-outline"></ion-icon> &nbsp;{{ emailU }}</p>
     </ion-card-content>
-    
   </ion-card>
-
-  <ion-button (click)="redirectToCred()">Creditos 
-    <ion-icon name="school-outline"></ion-icon>
-  </ion-button>
-
-  <ion-button  class="creditos-boton"(click)="redirectToUrl()">
-    Banco de proyectos
-  </ion-button>
   
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="5">
+        <button (click)="redirectToCred()" class="hbutton" color="primary">
+          <ion-icon class="isize" name="school-outline"></ion-icon>
+          <br />
+          Créditos complementarios
+        </button>
+      </ion-col>
+      <ion-col size="5">
+        <button (click)="redirectToUrl()" class="hbutton" color="primary">
+          <ion-icon class="isize" name="file-tray-full-outline"></ion-icon> 
+          <br />
+          Banco de proyectos
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="5">
+          <button class="hbutton" color="primary">
+            <ion-icon class="isize" name="book-outline"></ion-icon>
+          <br />
+          Cuestionarios
+          </button>
+      </ion-col>
+      <ion-col size="5">
+        <button class="hbutton" color="primary">
+          <ion-icon class="isize" name="person-add-outline"></ion-icon>
+        <br />
+        Editar perfil
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   
-    
-    
+
   
 </ion-content>
 
