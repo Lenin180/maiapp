@@ -147,10 +147,29 @@ export class HomePage {
           const CURP = response.CURP;
           this.cookieService.set('CURP', CURP);
   
-          //
+          //NSS
           const NSS = response.NSS;
           this.cookieService.set('NSS', NSS);
-
+          const phone = response.phone;
+          this.cookieService.set('Phone', phone);
+          const address = response.address;
+          this.cookieService.set('Address',address);
+          const postal_code = response.postal_code;
+          this.cookieService.set('Pcode',postal_code);
+          const personal_email = response.personal_email;
+          this.cookieService.set('PersonalMail',personal_email);
+          const religion = response.religion;
+          this.cookieService.set('Religion',religion);
+          const weight = response.weight;
+          this.cookieService.set('Weight',weight);
+          const height = response.height;
+          this.cookieService.set('Height',height);
+          const gender = response.gender;
+          this.cookieService.set('Gender',gender);
+          const marital_status = response.marital_status;
+          this.cookieService.set('MaritalS',marital_status);
+          const enrollment = response.enrollment;
+          this.cookieService.set('Enrol',enrollment);
         },
         (error) => {
           // Lógica para manejar el error

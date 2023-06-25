@@ -24,6 +24,9 @@ export class EditarPerfilPage {
   weight!: string;
   height!: string;
   responseData!: any;
+  gender!: string;
+  marital_status!: string;
+  enrollment!: string;
 
   constructor(private router: Router, private cookieService: CookieService, private http:HttpClient) { 
 
@@ -33,6 +36,16 @@ export class EditarPerfilPage {
     this.second_lastname = this.cookieService.get('Ape2');
     this.CURP = this.cookieService.get('CURP');
     this.NSS = this.cookieService.get('NSS');
+    this.phone = this.cookieService.get('Phone');
+    this.address = this.cookieService.get('Address');
+    this.postal_code = this.cookieService.get('Pcode');
+    this.personal_email = this.cookieService.get('PersonalMail');
+    this.religion = this.cookieService.get('Religion');
+    this.weight = this.cookieService.get('Weight');
+    this.height = this.cookieService.get('Height');
+    this.gender = this.cookieService.get('Gender');
+    this.marital_status = this.cookieService.get('MaritalS');
+    this.enrollment = this.cookieService.get('Enrol');
   }
 
   ionViewDidEnter() {

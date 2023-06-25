@@ -15,6 +15,11 @@
   </ion-card>
   <ion-card color="primary">
     <ion-card-content>
+      <ion-card-header>
+        <ion-card-title>
+          Infomación general
+        </ion-card-title>
+      </ion-card-header>
       <ion-item lines="full">
         <ion-label position="stacked">Nombres</ion-label>
         <ion-input value="{{ full_name }}" ></ion-input>
@@ -32,8 +37,49 @@
         <ion-input value="{{ CURP }}"></ion-input>
       </ion-item>
       <ion-item lines="full">
+        <ion-label position="stacked">Teléfono</ion-label>
+        <ion-input value="{{ phone }}"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
         <ion-label position="stacked">CURP</ion-label>
         <ion-input value="{{ NSS }}"></ion-input>
+      </ion-item>
+      <ion-card-header>
+        <ion-card-title>
+          Datos personales
+        </ion-card-title>
+      </ion-card-header>
+      <ion-item lines="full">
+        <ion-label position="stacked">Sexo</ion-label>
+        <ion-input value="{{ gender }}"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="stacked">Estado civil</ion-label>
+        <ion-input value="{{ marital_status }}"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="stacked">Dirección</ion-label>
+        <ion-input value="{{ address }}"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="stacked">Código postal</ion-label>
+        <ion-input value="{{ postal_code }}"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="stacked">Correo personal</ion-label>
+        <ion-input value="{{ personal_email }}"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="stacked">Religión</ion-label>
+        <ion-input value="{{ religion }}"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="stacked">Peso</ion-label>
+        <ion-input value="{{ weight }}"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="stacked">Altura</ion-label>
+        <ion-input value="{{ height }}"></ion-input>
       </ion-item>
     </ion-card-content>
   </ion-card>
