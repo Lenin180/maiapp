@@ -27,6 +27,8 @@ export class EditarPerfilPage {
   gender!: string;
   marital_status!: string;
   enrollment!: string;
+  admission!: string;
+  emailU!: string;
 
   constructor(private router: Router, private cookieService: CookieService, private http:HttpClient) { 
 
@@ -46,6 +48,8 @@ export class EditarPerfilPage {
     this.gender = this.cookieService.get('Gender');
     this.marital_status = this.cookieService.get('MaritalS');
     this.enrollment = this.cookieService.get('Enrol');
+    this.admission = this.cookieService.get('Ingreso');
+    this.emailU = this.cookieService.get('emailU');
   }
 
   ionViewDidEnter() {
