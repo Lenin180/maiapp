@@ -35,6 +35,10 @@ export class CreditosPage {
   value_credit_5!: string;
   responseData!: any;
   status_credit_1!: string;
+  status_credit_2!: string;
+  status_credit_3!: string;
+  status_credit_4!: string;
+  status_credit_5!: string;
 
 
 
@@ -47,10 +51,25 @@ export class CreditosPage {
     this.name_credit_4 = this.cookieService.get('Ncredito4');
     this.name_credit_5 = this.cookieService.get('Ncredito5');
     this.description_credit_1 = this.cookieService.get('Descripcion1');
-    this.name_credit_2 = this.cookieService.get('Ncredito2');
+    this.description_credit_2 = this.cookieService.get('Descripcion2');
+    this.description_credit_3 = this.cookieService.get('Descripcion3');
+    this.description_credit_4 = this.cookieService.get('Descripcion4');
+    this.description_credit_5 = this.cookieService.get('Descripcion5');
     this.value_credit_1 = this.cookieService.get('value1:');
+    this.value_credit_2 = this.cookieService.get('value2:');
+    this.value_credit_3 = this.cookieService.get('value3:');
+    this.value_credit_4 = this.cookieService.get('value4:');
+    this.value_credit_5 = this.cookieService.get('value5:');
     this.url_evidence_credit_1 = this.cookieService.get('URL1');
+    this.url_evidence_credit_2 = this.cookieService.get('URL2');
+    this.url_evidence_credit_3 = this.cookieService.get('URL3');
+    this.url_evidence_credit_4 = this.cookieService.get('URL4');
+    this.url_evidence_credit_5 = this.cookieService.get('URL5');
     this.status_credit_1 = this.cookieService.get('Status1');
+    this.status_credit_2 = this.cookieService.get('Status2');
+    this.status_credit_3 = this.cookieService.get('Status3');
+    this.status_credit_4 = this.cookieService.get('Status4');
+    this.status_credit_5 = this.cookieService.get('Status5');
 
   }
   
@@ -186,6 +205,19 @@ export class CreditosPage {
 
         const status_credit_1 = response.status_credit_1;
         this.cookieService.set('Status1', status_credit_1);
+
+        const status_credit_2 = response.status_credit_2;
+        this.cookieService.set('Status2', status_credit_2);
+        
+        const status_credit_3 = response.status_credit_3;
+        this.cookieService.set('Status3', status_credit_3);
+        
+        const status_credit_4 = response.status_credit_4;
+        this.cookieService.set('Status4', status_credit_4);
+        
+        const status_credit_5 = response.status_credit_5;
+        this.cookieService.set('Status5', status_credit_5);
+        
         
 
         
