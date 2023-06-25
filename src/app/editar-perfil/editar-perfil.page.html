@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button slot="start" fill="clear">
+      <ion-back-button defaultHref="inicio" text="Regresar"> </ion-back-button>
+      </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="red">
+    <ion-card-content>
+      <h1 class="ion-title">Más información</h1>
+      <p>Aquí podrás consultar más información de tu perfil de estudiante.</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card color="primary">
+    <ion-card-content>
+      <ion-item lines="full">
+        <ion-label position="stacked">Nombres</ion-label>
+        <ion-input value="{{ full_name }}" ></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="stacked">Apellido paterno</ion-label>
+        <ion-input value="{{ first_lastname }}"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="stacked">Apellido paterno</ion-label>
+        <ion-input value="{{ second_lastname }}"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="stacked">CURP</ion-label>
+        <ion-input value="{{ CURP }}"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="stacked">CURP</ion-label>
+        <ion-input value="{{ NSS }}"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

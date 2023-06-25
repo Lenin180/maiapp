@@ -143,8 +143,13 @@ export class HomePage {
           console.log('Ap2', second_lastname);
           this.cookieService.set('Ape2', second_lastname);
 
-
-
+          //CURP
+          const CURP = response.CURP;
+          this.cookieService.set('CURP', CURP);
+  
+          //
+          const NSS = response.NSS;
+          this.cookieService.set('NSS', NSS);
 
         },
         (error) => {

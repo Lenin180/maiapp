@@ -18,7 +18,11 @@ const routes: Routes = [
   { ///ruta creditos 
     path: 'creditos',
     loadChildren: () => import('./creditos/creditos.module').then( m => m.CreditosPageModule)
+  },  {
+    path: 'editar-perfil',
+    loadChildren: () => import('./editar-perfil/editar-perfil.module').then( m => m.EditarPerfilPageModule)
   },
+
   
 ];
 

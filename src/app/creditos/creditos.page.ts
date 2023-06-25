@@ -86,9 +86,6 @@ export class CreditosPage {
     localStorage.getItem('access_token');
     const url = `https://platform-api.aaaimx.org/api/v1/complementaryCredit/credits/${this.id}`;
   
-  
-
-
     // Define los encabezados de la solicitud
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${localStorage.getItem('access_token')}`
@@ -205,7 +202,7 @@ export class CreditosPage {
 
         const status_credit_1 = response.status_credit_1;
         this.cookieService.set('Status1', status_credit_1);
-
+        
         const status_credit_2 = response.status_credit_2;
         this.cookieService.set('Status2', status_credit_2);
         
@@ -217,11 +214,6 @@ export class CreditosPage {
         
         const status_credit_5 = response.status_credit_5;
         this.cookieService.set('Status5', status_credit_5);
-        
-        
-
-        
-
 
       },
       (error) => {
@@ -230,8 +222,6 @@ export class CreditosPage {
       }
     );
     }
-
-
 
   logout() {
     // Redirigir a la página de inicio de sesión
