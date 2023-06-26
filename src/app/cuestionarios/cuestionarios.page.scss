@@ -14,31 +14,24 @@ ion-card-content p{
 }
 .red{
     background-color: #801E18;;
-}
-
-.viewed {
+}.viewed {
     /* Estilos para el estado "VIEWED" */
     background-color:  #99ddc2;
     border: 2px solid #99ddc2;
-    
-  }
-
-  .viewed-label {
+}
+.viewed-label {
     color: #99ddc2; /* Color específico para el texto "Revisado" */
-  }
+}
 
-  .pending-label{
+.pending-label{
     color: yellow;
-  }
-
-
-  
-  .pending {
+}
+.pending {
     /* Estilos para el estado "PENDING" */
     background-color: yellow;
     border: 2px solid yellow;
-  }
-  .centerd{
+}
+.centerd{
     justify-content: center;
     align-items: center;
-  }
+}
