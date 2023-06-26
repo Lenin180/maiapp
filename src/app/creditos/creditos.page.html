@@ -17,133 +17,199 @@
   <ion-card>
     <ion-card-content>
       <form action="">
+        
         <ion-card-header>
           <ion-card-title>
             Crédito complementario 1
           </ion-card-title>
         </ion-card-header>
+        
+        <ion-card [ngClass]="{ 'viewed': status_credit_1 === 'VIEWED', 'pending': status_credit_1 === 'PENDING' }">
+
         <ion-item lines="full">
           <ion-label position="stacked">Actividad</ion-label>
-          <ion-input   value="{{ name_credit_1 }}" disabled=""></ion-input>
+          <ion-input [value]="name_credit_1" readonly="readonly" ></ion-input>
         </ion-item>
+
         <ion-item lines="full">
           <ion-label position="stacked">Descripción</ion-label>
-          <ion-input value="{{description_credit_1}}" disabled=""></ion-input>
+          <ion-input [value]="description_credit_1" readonly="readonly" ></ion-input>
+          
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Evidencia</ion-label>
-          <ion-input value="{{url_evidence_credit_1}}" disabled="" ></ion-input>
+          <ion-input [value]="url_evidence_credit_1" readonly="readonly" ></ion-input>
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Créditos</ion-label>
-          <ion-input value="{{ value_credit_1}}" disabled=""></ion-input>
+          <ion-input [value]="value_credit_1" readonly="readonly" ></ion-input>
+          
         </ion-item>
-        <ion-item lines="full">
-          <ion-label position="stacked">Estatus</ion-label>
-          <ion-input value="{{status_credit_1}}" disabled=""></ion-input>
+        <ion-item >
+          <ion-icon name="checkmark-circle-outline" style="color:#99ddc2;" slot="end" *ngIf="status_credit_1.includes('VIEWED')"  ></ion-icon>
+          <ion-label *ngIf="status_credit_1.includes('VIEWED')" class="viewed-label">Revisado</ion-label>
+          <ion-icon name="hourglass-outline" slot="end" *ngIf="status_credit_1.includes('PENDING')"></ion-icon>
+          <ion-label *ngIf="status_credit_1.includes('PENDING')" class="pending-label">Pendiente</ion-label>
         </ion-item>
+        </ion-card>
+
         <ion-card-header>
           <ion-card-title>
             Crédito complementario 2
           </ion-card-title>
         </ion-card-header>
+
+        <ion-card [ngClass]="{ 'viewed': status_credit_3 === 'VIEWED', 'pending': status_credit_3 === 'PENDING' }">
         <ion-item lines="full">
           <ion-label position="stacked">Actividad</ion-label>
-          <ion-input   value="{{ name_credit_2 }}" disabled=""></ion-input>
+          <ion-input   value="{{ name_credit_2 }}" readonly="readonly" ></ion-input>
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Descripción</ion-label>
-          <ion-input value="{{description_credit_2}}" disabled=""></ion-input>
+          <ion-input value="{{description_credit_2}}" readonly="readonly" ></ion-input>
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Evidencia</ion-label>
-          <ion-input value="{{url_evidence_credit_2}}" disabled="" ></ion-input>
+          <ion-input value="{{url_evidence_credit_2}}" readonly="readonly"  ></ion-input>
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Créditos</ion-label>
-          <ion-input value="{{ value_credit_2}}" disabled=""></ion-input>
+          <ion-input value="{{ value_credit_2}}" readonly="readonly" ></ion-input>
         </ion-item>
-        <ion-item lines="full">
-          <ion-label position="stacked">Estatus</ion-label>
-          <ion-input value="{{status_credit_2}}" disabled=""></ion-input>
+        <ion-item >
+          <ion-icon name="checkmark-circle-outline" style="color:#99ddc2;" slot="end" *ngIf="status_credit_2.includes('VIEWED')"></ion-icon>
+          <ion-label *ngIf="status_credit_2.includes('VIEWED')" class="viewed-label">Revisado</ion-label>
+          <ion-icon name="hourglass-outline" slot="end" *ngIf="status_credit_2.includes('PENDING')"></ion-icon>
+          <ion-label *ngIf="status_credit_2.includes('PENDING')" class="pending-label">Pendiente</ion-label>
         </ion-item>
+        </ion-card>
         
         <ion-card-header>
           <ion-card-title>
             Crédito complementario 3
           </ion-card-title>
         </ion-card-header>
+
+        <ion-card [ngClass]="{ 'viewed': status_credit_3 === 'VIEWED', 'pending': status_credit_3 === 'PENDING' }">
         <ion-item lines="full">
           <ion-label position="stacked">Actividad</ion-label>
-          <ion-input   value="{{ name_credit_3 }}" disabled=""></ion-input>
+          <ion-input   value="{{ name_credit_3 }}" readonly="readonly" ></ion-input>
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Descripción</ion-label>
-          <ion-input value="{{description_credit_3}}" disabled=""></ion-input>
+          <ion-input value="{{description_credit_3}}" readonly="readonly" ></ion-input>
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Evidencia</ion-label>
-          <ion-input value="{{url_evidence_credit_3}}" disabled="" ></ion-input>
+          <ion-input value="{{url_evidence_credit_3}}" readonly="readonly"  ></ion-input>
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Créditos</ion-label>
-          <ion-input value="{{ value_credit_3}}" disabled=""></ion-input>
+          <ion-input value="{{ value_credit_3}}" readonly="readonly" ></ion-input>
         </ion-item>
-        <ion-item lines="full">
-          <ion-label position="stacked">Estatus</ion-label>
-          <ion-input value="{{status_credit_3}}" disabled=""></ion-input>
+        <ion-item >
+          <ion-icon name="checkmark-circle-outline" style="color:#99ddc2;" slot="end" *ngIf="status_credit_3.includes('VIEWED')"  ></ion-icon>
+          <ion-label *ngIf="status_credit_3.includes('VIEWED')" class="viewed-label">Revisado</ion-label>
+          <ion-icon name="hourglass-outline" slot="end" *ngIf="status_credit_3.includes('PENDING')"></ion-icon>
+          <ion-label *ngIf="status_credit_3.includes('PENDING')" class="pending-label">Pendiente</ion-label>
         </ion-item>
+      </ion-card>
 
         <ion-card-header>
           <ion-card-title>
             Crédito complementario 4
           </ion-card-title>
         </ion-card-header>
+
+        <ion-card [ngClass]="{ 'viewed': status_credit_3 === 'VIEWED', 'pending': status_credit_3 === 'PENDING' }">
         <ion-item lines="full">
           <ion-label position="stacked">Actividad</ion-label>
-          <ion-input   value="{{ name_credit_4 }}" disabled=""></ion-input>
+          <ion-input   value="{{ name_credit_4 }}" readonly="readonly" ></ion-input>
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Descripción</ion-label>
-          <ion-input value="{{description_credit_4}}" disabled=""></ion-input>
+          <ion-input value="{{description_credit_4}}" readonly="readonly" ></ion-input>
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Evidencia</ion-label>
-          <ion-input value="{{url_evidence_credit_4}}" disabled="" ></ion-input>
+          <ion-input value="{{url_evidence_credit_4}}" readonly="readonly"  ></ion-input>
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Créditos</ion-label>
-          <ion-input value="{{ value_credit_4}}" disabled=""></ion-input>
+          <ion-input value="{{ value_credit_4}}" readonly="readonly" ></ion-input>
         </ion-item>
-        <ion-item lines="full">
-          <ion-label position="stacked">Estatus</ion-label>
-          <ion-input value="{{status_credit_4}}" disabled=""></ion-input>
+        <ion-item >
+          <ion-icon name="checkmark-circle-outline" style="color:#99ddc2;" slot="end" *ngIf="status_credit_4.includes('VIEWED')"  ></ion-icon>
+          <ion-label *ngIf="status_credit_4.includes('VIEWED')" class="viewed-label">Revisado</ion-label>
+          <ion-icon name="hourglass-outline" slot="end" *ngIf="status_credit_4.includes('PENDING')"></ion-icon>
+          <ion-label *ngIf="status_credit_4.includes('PENDING')" class="pending-label">Pendiente</ion-label>
         </ion-item>
+      </ion-card>
+
         <ion-card-header>
           <ion-card-title>
             Crédito complementario 5
           </ion-card-title>
         </ion-card-header>
+
+        <ion-card [ngClass]="{ 'viewed': status_credit_3 === 'VIEWED', 'pending': status_credit_3 === 'PENDING' }">
         <ion-item lines="full">
           <ion-label position="stacked">Actividad</ion-label>
-          <ion-input   value="{{ name_credit_5}}" disabled=""></ion-input>
+          <ion-input   value="{{ name_credit_5}}" readonly="readonly" ></ion-input>
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Descripción</ion-label>
-          <ion-input value="{{description_credit_5}}" disabled=""></ion-input>
+          <ion-input value="{{description_credit_5}}" readonly="readonly" ></ion-input>
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Evidencia</ion-label>
-          <ion-input value="{{url_evidence_credit_5}}" disabled="" ></ion-input>
+          <ion-input value="{{url_evidence_credit_5}}" readonly="readonly"  ></ion-input>
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Créditos</ion-label>
-          <ion-input value="{{ value_credit_5}}" disabled=""></ion-input>
+          <ion-input value="{{ value_credit_5}}" readonly="readonly" ></ion-input>
         </ion-item>
-        <ion-item lines="full">
-          <ion-label position="stacked">Estatus</ion-label>
-          <ion-input value="{{status_credit_5}}" disabled=""></ion-input>
+        <ion-item >
+          <ion-icon name="checkmark-circle-outline" style="color:#99ddc2;" slot="end" *ngIf="status_credit_5.includes('VIEWED')"  ></ion-icon>
+          <ion-label *ngIf="status_credit_5.includes('VIEWED')" class="viewed-label">Revisado</ion-label>
+          <ion-icon name="hourglass-outline" slot="end" *ngIf="status_credit_5.includes('PENDING')"></ion-icon>
+          <ion-label *ngIf="status_credit_5.includes('PENDING')" class="pending-label">Pendiente</ion-label>
         </ion-item>
+      </ion-card>
+
+
+      <ion-card-header>
+        <ion-card-title>
+          Crédito complementario 6
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card [ngClass]="{ 'viewed': status_credit_3 === 'VIEWED', 'pending': status_credit_6 === 'PENDING' }">
+      <ion-item lines="full">
+        <ion-label position="stacked">Actividad</ion-label>
+        <ion-input   value="{{ name_credit_6}}" readonly="readonly" ></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="stacked">Descripción</ion-label>
+        <ion-input value="{{description_credit_6}}" readonly="readonly" ></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="stacked">Evidencia</ion-label>
+        <ion-input value="{{url_evidence_credit_6}}" readonly="readonly" ></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="stacked">Créditos</ion-label>
+        <ion-input value="{{ value_credit_6}}" readonly="readonly" ></ion-input>
+      </ion-item>
+      <ion-item >
+        <ion-icon name="checkmark-circle-outline" style="color:#99ddc2;" slot="end" *ngIf="status_credit_6.includes('VIEWED')"  ></ion-icon>
+        <ion-label *ngIf="status_credit_6.includes('VIEWED')" class="viewed-label">Revisado</ion-label>
+        <ion-icon name="hourglass-outline" slot="end" *ngIf="status_credit_6.includes('PENDING')"></ion-icon>
+        <ion-label *ngIf="status_credit_6.includes('PENDING')" class="pending-label">Pendiente</ion-label>
+      </ion-item>
+    </ion-card>
+    <ion-button (click)="patchCredi()"> Enviar solicitud</ion-button>
+
       </form>
     </ion-card-content>
   </ion-card>

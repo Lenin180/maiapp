@@ -1,9 +1,10 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import jwt_decode from "jwt-decode";
 import { CookieService } from 'ngx-cookie-service';
 import { HttpHeaders } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -13,7 +14,8 @@ import { HttpHeaders } from '@angular/common/http';
   styleUrls: ['home.page.scss'],
   
 })
-export class HomePage {
+export class HomePage implements OnInit {
+  
   email!: string;
   password!: string; 
   route!:Router;
@@ -21,13 +23,22 @@ export class HomePage {
   fullname!: string;
   emailU!: string;
 
-  constructor(private http:HttpClient, private router: Router, private cookieService: CookieService) {
+  constructor(private http:HttpClient, private router: Router, private cookieService: CookieService,  private activatedRoute: ActivatedRoute) {
     
   }
+
+  ionViewDidEnter() {
+    // Llama al método que deseas ejecutar siempre al mostrar la página
+   
+  }
+
+  
  
 
   
    public login() {
+
+    
     
     const url = 'https://platform-api.aaaimx.org/api/v1/token/'; // Reemplaza con la URL de tu API de inicio de sesión
   
@@ -60,6 +71,7 @@ export class HomePage {
         this.getUserData();
         this.router.navigate(['/inicio']);
         
+        
       },
       (response) => {
         if (response) {
@@ -71,6 +83,7 @@ export class HomePage {
 
   }
   
+ 
 
   public guardarDatosJWT(access: string, refresh: string): void {
     //Guardar en el local
@@ -181,7 +194,9 @@ export class HomePage {
     }
   }
   
-
+  ngOnInit() {
+    
+  }
 
   
 }

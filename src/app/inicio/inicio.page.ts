@@ -10,7 +10,7 @@ import { CookieService } from 'ngx-cookie-service';
   
 })
 export class InicioPage implements OnInit {
-
+  
   fullname!: string;
   emailU!: string;
   occupation!: string;
@@ -33,6 +33,25 @@ export class InicioPage implements OnInit {
     // Llama al método que deseas ejecutar siempre al mostrar la página
     this.getcookies();
     this.genpicture();
+
+    //Para refrescar 1 vez 
+    const redirected = localStorage.getItem('redirected');
+
+    if (!redirected) {
+      // Establecer la bandera de redirección
+      localStorage.setItem('redirected', 'true');
+  
+      // Refrescar la página después de un breve período de tiempo (por ejemplo, 100 milisegundos)
+      setTimeout(() => {
+        window.location.reload();
+      }, 1);
+    } else {
+      // Limpiar la bandera de redirección
+      localStorage.removeItem('redirected');
+    }
+    
+    
+  /////  
   }
  
 
@@ -66,12 +85,14 @@ export class InicioPage implements OnInit {
       //console.log('Primera letra:', firstLetter);
       const firstLetter2 = this.first_lastname.charAt(0);
       //console.log('Primera letra:', firstLetter2);
+     // 
+     
     }
   
   
 
 
-  ngOnInit() {}
+ 
   
    //Boton bancode proyectos 
   redirectToUrl() {
@@ -91,12 +112,21 @@ export class InicioPage implements OnInit {
   redirecToEdit(){
     this.router.navigateByUrl('/editar-perfil');
   }
+
+
   logout() {
     // Redirigir a la página de inicio de sesión
-   // this.cookieService.deleteAll();
+    this.cookieService.deleteAll(); //Esto esta bien, pero por alguna razon perjudica al cargar datos en pagina 
+    //hay que hacer que se refesque la pag para que fucnione correctamente 
     this.router.navigateByUrl('/home');
+   
   }
 
+  ngOnInit() {
+   
+  }
+
+  
 
 
 

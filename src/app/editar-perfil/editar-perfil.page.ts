@@ -33,7 +33,7 @@ export class EditarPerfilPage {
   constructor(private router: Router, private cookieService: CookieService, private http:HttpClient) { 
 
     this.email = this.cookieService.get('Email');
-    this.full_name = this.cookieService.get('Nombre');
+    this.full_name = this.cookieService.get('Nombres');
     this.first_lastname = this.cookieService.get('Ape1');
     this.second_lastname = this.cookieService.get('Ape2');
     this.CURP = this.cookieService.get('CURP');

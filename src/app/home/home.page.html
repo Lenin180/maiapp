@@ -12,7 +12,7 @@
     </ion-card-header>
     <ion-card-content>
       <ion-item fill="outline">
-          <ion-input type="email" [(ngModel)]="email"></ion-input>
+          <ion-input type="email" [(ngModel)]="email" [clearInput]="true"></ion-input>
         <ion-note slot="error">Email inválido</ion-note>
       </ion-item>
     </ion-card-content>
@@ -21,7 +21,7 @@
     </ion-card-header>
     <ion-card-content>
       <ion-item fill="outline">
-          <ion-input type="password" [(ngModel)]="password"></ion-input>
+          <ion-input type="password" [(ngModel)]="password" [clearInput]="true"></ion-input>
         <ion-note slot="error">Email inválido</ion-note>
       </ion-item>
     </ion-card-content>
@@ -30,11 +30,6 @@
         <ion-grid>
           <ion-row class="ion-justify-content-center">
             <ion-button shape="round" expand="full" (click)="login()">Iniciar sesión</ion-button>
-          </ion-row>
-          <ion-row class="ion-justify-content-center">
-            <div class="ion-text-center pd">
-              <a href="https://maia.aaaimx.org/#/password-recovery" class="pass">¿Olvidaste tu contraseña?</a>
-            </div>
           </ion-row>
         </ion-grid>
       </ion-item>
