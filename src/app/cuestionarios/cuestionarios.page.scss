@@ -18,8 +18,8 @@ ion-card-content p{
 
 .viewed {
     /* Estilos para el estado "VIEWED" */
-    background-color:  #33b681;
-    border: 2px solid #33b681;
+    background-color:  #99ddc2;
+    border: 2px solid #99ddc2;
     
   }
 
@@ -37,4 +37,8 @@ ion-card-content p{
     /* Estilos para el estado "PENDING" */
     background-color: yellow;
     border: 2px solid yellow;
+  }
+  .centerd{
+    justify-content: center;
+    align-items: center;
   }

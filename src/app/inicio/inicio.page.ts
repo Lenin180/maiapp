@@ -113,7 +113,10 @@ export class InicioPage implements OnInit {
     this.router.navigateByUrl('/editar-perfil');
   }
 
-
+  redirectToCuest(){
+    this.router.navigateByUrl('/cuestionarios');
+  }
+  
   logout() {
     // Redirigir a la página de inicio de sesión
     this.cookieService.deleteAll(); //Esto esta bien, pero por alguna razon perjudica al cargar datos en pagina 

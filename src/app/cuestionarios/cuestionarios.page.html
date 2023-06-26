@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button slot="start" fill="clear">
+      <ion-back-button defaultHref="inicio" text="Regresar"> </ion-back-button>
+      </ion-button>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="red">
+    <ion-card-content>
+      <h1>Mis cuestionarios</h1>
+      <p>Aquí podrás encontrar tus cuestionarios y encuestas respondidas.  <b>Verifica que los datos de perfil estén correctos y actualizados.</b></p>
+    </ion-card-content>
+  </ion-card>
+  <h2 class="ion-text-center"><b>Selecciona el cuestionario que deseas contestar</b></h2>
+  <ion-card>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row class="centerd">
+          <ion-list>
+            <ion-item>
+              <ion-select label="Filtrar por" placeholder="ID">
+                <ion-select-option value="ID">ID</ion-select-option>
+                <ion-select-option value="Cuestionario">Cuestionario</ion-select-option>
+                <ion-select-option value="Descripcion">Descripción</ion-select-option>
+                <ion-select-option value="Fecha">Fecha</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+        </ion-row> <br>
+        <ion-row class="ion-text-justify">
+          <ion-col size="2"><b>ID</b></ion-col>
+          <ion-col size="7"><b>Cuestionario</b></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

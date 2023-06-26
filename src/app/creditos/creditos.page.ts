@@ -94,7 +94,7 @@ export class CreditosPage {
       // Agregar un retraso de 1 segundo antes de refrescar la página
       setTimeout(() => {
         window.location.reload();
-      }, 500);
+      }, 200);
     } else {
       // Limpiar la bandera de redirección
       localStorage.removeItem('redirected');
