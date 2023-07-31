@@ -29,6 +29,7 @@
     "@capacitor/status-bar": "5.0.4",
     "@fortawesome/fontawesome-free": "^6.4.0",
     "@ionic/angular": "^7.0.0",
+    "@ionic/lab": "^3.2.15",
     "@ionic/storage": "^4.0.0",
     "@ionic/storage-angular": "^4.0.0",
     "ionicons": "^7.0.0",

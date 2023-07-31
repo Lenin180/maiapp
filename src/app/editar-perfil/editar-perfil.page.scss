@@ -6,9 +6,13 @@ ion-card-content p{
     color: white;
 }
 .red{
-    background-color: #801E18;;
+    background-color: #832C3D;
 }
 ion-item{
     --background: transparent;
     --box-shadow: none;
+}
+.red{
+  --background: #832C3D;
+  --background-hover: #783333;
 }

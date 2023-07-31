@@ -22,73 +22,203 @@
       </ion-card-header>
       <ion-item lines="full">
         <ion-label position="stacked">Nombres</ion-label>
-        <ion-input value="{{ full_name }}" ></ion-input>
+        <ion-input [(ngModel)]="full_name"></ion-input>
       </ion-item>
       <ion-item lines="full">
         <ion-label position="stacked">Apellido paterno</ion-label>
-        <ion-input value="{{ first_lastname }}"></ion-input>
+        <ion-input [(ngModel)]="first_lastname"></ion-input>
       </ion-item>
       <ion-item lines="full">
         <ion-label position="stacked">Apellido paterno</ion-label>
-        <ion-input value="{{ second_lastname }}"></ion-input>
+        <ion-input [(ngModel)]=" second_lastname "></ion-input>
       </ion-item>
       <ion-item lines="full">
         <ion-label position="stacked">CURP</ion-label>
-        <ion-input value="{{ CURP }}"></ion-input>
+        <ion-input [(ngModel)] ="CURP" pattern=".{18}" minlength="18" maxlength="18" required></ion-input>
       </ion-item>
       <ion-item lines="full">
         <ion-label position="stacked">Teléfono</ion-label>
-        <ion-input value="{{ phone }}"></ion-input>
+        <ion-input type="tel" [(ngModel)]=" phone " pattern=".{10}" minlength="10" maxlength="10" required></ion-input>
+
       </ion-item>
       <ion-item lines="full">
-        <ion-label position="stacked">NSS</ion-label>
-        <ion-input value="{{ NSS }}"></ion-input>
+        <ion-label position="stacked">Fecha de nacimiento</ion-label>
+        <ion-input [(ngModel)]="birthday" (click)="toggleDatetimePicker()"></ion-input>
+        <ion-datetime display-format="DD/MM/YYYY HH:mm" [(ngModel)]="birthday" *ngIf="showDatetimePicker" showDefaultButtons="true" cancelText="Cancelar" doneText="Listo">
+        </ion-datetime>
       </ion-item>
+
       <ion-item lines="full">
-        <ion-label position="stacked">Ingreso</ion-label>
-        <ion-input>{{admission}}° Ingreso</ion-input>
+        <ion-label position="stacked">NSS (Opcional)</ion-label>
+        <ion-input [(ngModel)]="NSS" pattern=".{11}" minlength="11" maxlength="11" required></ion-input>
       </ion-item>
-      <ion-item lines="full">
-        <ion-label position="stacked">Correo institucional</ion-label>
-        <ion-input value="{{emailU}}"></ion-input>
-      </ion-item>
+
+
       <ion-card-header>
         <ion-card-title class="ion-text-center">
           Datos personales
         </ion-card-title>
       </ion-card-header>
+
       <ion-item lines="full">
         <ion-label position="stacked">Sexo</ion-label>
-        <ion-input value="{{ gender }}"></ion-input>
+        <ion-select [(ngModel)]="gender">
+          <ion-select-option value="M">Hombre</ion-select-option>
+          <ion-select-option value="F">Mujer</ion-select-option>
+        </ion-select>
       </ion-item>
+
       <ion-item lines="full">
         <ion-label position="stacked">Estado civil</ion-label>
-        <ion-input value="{{ marital_status }}"></ion-input>
+        <ion-select [(ngModel)]="marital_status">
+          <ion-select-option value="S">Soltero</ion-select-option>
+          <ion-select-option value="M">Casado</ion-select-option>
+        </ion-select>
       </ion-item>
       <ion-item lines="full">
         <ion-label position="stacked">Dirección</ion-label>
-        <ion-input value="{{ address }}"></ion-input>
+        <ion-input [(ngModel)]="address"></ion-input>
       </ion-item>
       <ion-item lines="full">
         <ion-label position="stacked">Código postal</ion-label>
-        <ion-input value="{{ postal_code }}"></ion-input>
+        <ion-input [(ngModel)]="postal_code" pattern=".{5}" minlength="5" maxlength="5" required></ion-input>
       </ion-item>
       <ion-item lines="full">
         <ion-label position="stacked">Correo personal</ion-label>
-        <ion-input value="{{ personal_email }}"></ion-input>
+        <ion-input [(ngModel)]="personal_email"></ion-input>
+        <ion-note slot="error">Email inválido</ion-note>
       </ion-item>
+
       <ion-item lines="full">
-        <ion-label position="stacked">Religión</ion-label>
-        <ion-input value="{{ religion }}"></ion-input>
+        <ion-label position="stacked">Te consideras:</ion-label>
+        <ion-select [(ngModel)]="religion">
+          <ion-select-option value="Agnóstico">Agnóstico</ion-select-option>
+          <ion-select-option value="Ateo">Ateo</ion-select-option>
+          <ion-select-option value="Otro">Otro</ion-select-option>
+          <ion-select-option value="Religioso">Religioso</ion-select-option>
+          <ion-select-option value="Espiritual no religioso">Espiritual no religioso</ion-select-option>
+        </ion-select>
       </ion-item>
+
       <ion-item lines="full">
         <ion-label position="stacked">Peso</ion-label>
-        <ion-input value="{{ weight }}"></ion-input>
+        <ion-input [(ngModel)]="weight" pattern=".{3}" minlength="3" maxlength="3"></ion-input>
       </ion-item>
       <ion-item lines="full">
         <ion-label position="stacked">Altura</ion-label>
-        <ion-input value="{{ height }}"></ion-input>
+        <ion-input [(ngModel)]="height"></ion-input>
       </ion-item>
+      <ion-item lines="full">
+        <ion-label position="stacked">Ingreso familiar (mensual)</ion-label>
+        <ion-input [(ngModel)]="income"></ion-input>
+      </ion-item>
+      <!--
+      <ion-item lines="full">
+        <ion-label position="stacked">Pasatiempos</ion-label>
+        <ion-input [(ngModel)]="hobbies" name="hobbies"></ion-input>
+      </ion-item>
+       -->
+
+      <ion-item lines="full">
+        <ion-label position="stacked">Trabajas actualmente</ion-label>
+        <ion-select [(ngModel)]="has_job">
+          <ion-select-option value="true">Si</ion-select-option>
+          <ion-select-option value="false">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="stacked">¿Hablas alguna lengua indígena?</ion-label>
+        <ion-select [(ngModel)]="is_native">
+          <ion-select-option value="true">Si</ion-select-option>
+          <ion-select-option value="false">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">
+          Infomación escolar
+        </ion-card-title>
+      </ion-card-header>
+      <ion-item lines="full">
+        <ion-label position="stacked">Matricula</ion-label>
+        <ion-input value="{{ enrollment }}" pattern=".{10}" minlength="10" maxlength="10"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="stacked">Ingreso</ion-label>
+        <ion-input [disabled]="admission !== ''">{{admission}}</ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="stacked">Promedio (Bachillerato)</ion-label>
+        <ion-input [(ngModel)]="last_grade"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="stacked">Carrera</ion-label>
+        <ion-select [(ngModel)]="career1">
+          <ion-select-option value="ISC">Ingeniería en Sistemas Computacionales </ion-select-option>
+          <ion-select-option value="IGE">Ingeniería en Gestión Empresarial</ion-select-option>
+          <ion-select-option value="IA">Ingeniería Ambiental</ion-select-option>
+          <ion-select-option value="IBQ">Ingeniería Bioquímica</ion-select-option>
+          <ion-select-option value="IBM">Ingeniería Biomédica</ion-select-option>
+          <ion-select-option value="IQ">Ingeniería Química</ion-select-option>
+          <ion-select-option value="IELE">Ingeniería Eléctrica</ion-select-option>
+          <ion-select-option value="IELC">Ingeniería Electrónica</ion-select-option>
+          <ion-select-option value="IM">Ingeniería Mecánica</ion-select-option>
+          <ion-select-option value="IC">Ingeniería Civil</ion-select-option>
+          <ion-select-option value="II">Ingeniería Industrial</ion-select-option>
+          <ion-select-option value="LA">Licenciatura en Administración</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="stacked">Especialidad</ion-label>
+        <ion-input [(ngModel)]="specialty"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="stacked">Tutor</ion-label>
+        <ion-select [(ngModel)]="tutor">
+          <ion-select-option value="ESTRELLA Y CHAN URSULO">ESTRELLA Y CHAN URSULO </ion-select-option>
+          <ion-select-option value="AMARO ACUÑA SERGIO HERNÁN">AMARO ACUÑA SERGIO HERNÁN</ion-select-option>
+          <ion-select-option value="AMAYA GAMBOA LUIS JORGE">AMAYA GAMBOA LUIS JORGE</ion-select-option>
+          <ion-select-option value="APOLINAR BURGOS LUCY ROSALINDA">APOLINAR BURGOS LUCY ROSALINDA</ion-select-option>
+          <ion-select-option value="BERMEJO SABBAGH CARLOS">BERMEJO SABBAGH CARLOS</ion-select-option>
+          <ion-select-option value="BURGOS GONZALEZ GLENDY MARISOL">BURGOS GONZALEZ GLENDY MARISOL</ion-select-option>
+          <ion-select-option value="CACERES ESCALANTE RAÚL">CACERES ESCALANTE RAÚL</ion-select-option>
+          <ion-select-option value="CAMPOS CHUC FÁTIMA DEL ROSARIO">CAMPOS CHUC FÁTIMA DEL ROSARIO</ion-select-option>
+          <ion-select-option value="CANUL NOVELO GRELTY DEL SOCORRO">CANUL NOVELO GRELTY DEL SOCORRO</ion-select-option>
+          <ion-select-option value="CARDENAS PRIMENTEL FRANCISCO JAVIER">CARDENAS PRIMENTEL FRANCISCO JAVIER</ion-select-option>
+          <ion-select-option value="CETINA CORDERO HECTOR JESÚS">CETINA CORDERO HECTOR JESÚS</ion-select-option>
+          <ion-select-option value="CUEVAS CUEVAS NORA LETICIA">CUEVAS CUEVAS NORA LETICIA</ion-select-option>
+          <ion-select-option value="DUCH GARY JOSÉ LUIS">DUCH GARY JOSÉ LUIS</ion-select-option>
+          <ion-select-option value="DUARTE ACHACH FAUSTO DE LA CRUZ">DUARTE ACHACH FAUSTO DE LA CRUZ</ion-select-option>
+          <ion-select-option value="DUARTE ACHACH RAÚL ALBERTO">DUARTE ACHACH RAÚL ALBERTO</ion-select-option>
+          <ion-select-option value="GONGORA CARDENAS PASTOR ENRIQUE">GONGORA CARDENAS PASTOR ENRIQUE</ion-select-option>
+          <ion-select-option value="JIMENEZ OCHOA MARÍA ITALIA">JIMENEZ OCHOA MARÍA ITALIA</ion-select-option>
+          <ion-select-option value="LEAL OJEDA RODRIGO">LEAL OJEDA RODRIGO</ion-select-option>
+          <ion-select-option value="LOPEZ PUERTO KARIME ALEJANDRA">LOPEZ PUERTO KARIME ALEJANDRA</ion-select-option>
+          <ion-select-option value="MANZANILLA VALLEJO BIELKA JOSEFINA">MANZANILLA VALLEJO BIELKA JOSEFINA</ion-select-option>
+          <ion-select-option value="MEZQUITA MENDEZ WILBERT FRANCISCO">MEZQUITA MENDEZ WILBERT FRANCISCO</ion-select-option>
+          <ion-select-option value="MORENO CIME SARA NELLY">MORENO CIME SARA NELLY</ion-select-option>
+          <ion-select-option value="MORENO SABIDO MARIO RENÁN">MORENO SABIDO MARIO RENÁN</ion-select-option>
+          <ion-select-option value="MOTA PINO LUIS JOAQUIN ALBERTO">MOTA PINO LUIS JOAQUIN ALBERTO</ion-select-option>
+          <ion-select-option value="NAVARRETE SOLÍS CARLOS ANTONIO">NAVARRETE SOLÍS CARLOS ANTONIO</ion-select-option>
+          <ion-select-option value="OLIVA AVILÉS ANDRÉS IVÁN">OLIVA AVILÉS ANDRÉS IVÁN</ion-select-option>
+          <ion-select-option value="OROZCO DEL CASTILLO MAURICIO GABRIEL">OROZCO DEL CASTILLO MAURICIO GABRIEL</ion-select-option>
+          <ion-select-option value="ORTIZ SÁNCHEZ PEDRO ALFONSO GUADALUPE">ORTIZ SÁNCHEZ PEDRO ALFONSO GUADALUPE</ion-select-option>
+          <ion-select-option value="PENICHE RUIZ LARISSA JEANETTE">PENICHE RUIZ LARISSA JEANETTE</ion-select-option>
+          <ion-select-option value="POLANCO SOSA FRANCISCO JOSÉ">POLANCO SOSA FRANCISCO JOSÉ</ion-select-option>
+          <ion-select-option value="RIVERO SALAZAR TERESITA ALEJANDRA DE JESÚS">RIVERO SALAZAR TERESITA ALEJANDRA DE JESÚS</ion-select-option>
+          <ion-select-option value="RODRIGUEZ MORAYTA MANUEL JESÚS">RODRIGUEZ MORAYTA MANUEL JESÚS</ion-select-option>
+          <ion-select-option value="OVIDAL SERRANO BERTHA CONCEPCIÓN">VIDAL SERRANO BERTHA CONCEPCIÓN</ion-select-option>
+          <ion-select-option value="VILLAFAÑA GAMBOA DAKAR FERNANDO">VILLAFAÑA GAMBOA DAKAR FERNANDO</ion-select-option>
+          <ion-select-option value="VILLANUEVA ESCALANTE MARISOL">VILLANUEVA ESCALANTE MARISOL</ion-select-option>
+          <ion-select-option value="YAM PUC JESÚS ALEJANDRO">YAM PUC JESÚS ALEJANDRO</ion-select-option>
+          <ion-select-option value="YAÑEZ HOYOS AIDA GABRIELA">YAÑEZ HOYOS AIDA GABRIELA</ion-select-option>
+          <ion-select-option value="ZAPATA VARGAS MARTHA ADRIANA">ZAPATA VARGAS MARTHA ADRIANA</ion-select-option>
+          <ion-select-option value="PECH CHACÓN MARÍA CONCEPCIÓN">PECH CHACÓN MARÍA CONCEPCIÓN</ion-select-option>
+          <ion-select-option value="ZCAMACHO PÉREZ JUAN MANUEL">CAMACHO PÉREZ JUAN MANUEL</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button expand="full" (click)="patchUser() ; patchUserGD()" class="red">Guardar</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>

@@ -13,12 +13,16 @@ ion-card-content p{
     color: white;
 }
 .red{
-    background-color: #801E18;;
+    background-color: #832C3D;
+}
+.red2{
+    --background: #832C3D;
+    --background-hover: #783333;
 }
 .viewed{
     /* Estilos para el estado "VIEWED" */
     background-color:  #33b681;
-    border: 2px solid #33b681; 
+    border: 2px solid #33b681;
 }
 .viewed-label {
     color: #99ddc2; /* Color específico para el texto "Revisado" */
@@ -30,4 +34,14 @@ ion-card-content p{
     /* Estilos para el estado "PENDING" */
     background-color: yellow;
     border: 2px solid yellow;
+}
+button{
+  font-size: 1rem;
+  background-color: #832C3D;
+  border-radius: 10px;
+}
+.hbutton{
+  height: 13vmin;
+  width: 35vmin;
+  margin-bottom: 1rem;
 }

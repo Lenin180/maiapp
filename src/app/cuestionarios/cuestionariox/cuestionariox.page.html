@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button slot="start" fill="clear">
+      <ion-back-button defaultHref="inicio" text="Salir"> </ion-back-button>
+      </ion-button>
+
+  </ion-toolbar>
+
+<ion-content [fullscreen]="true" >
+  <ion-header collapse="condense">
+    <ion-card class="red">
+      <ion-card-content>
+        <p>A continuación se presenta una serie de enunciados a los cuales debes asociarle la opción con la que más te identifiques. Sólo es posible escoger una opción de respuesta a cada enunciado. Procura resolver este cuestionario en un lugar tranquilo, libre de distracciones y toma el tiempo que necesites para elegir tu respuesta.</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-header>
+    <ion-card *ngIf="list && list.length > 0">
+      <ion-card-header>
+      </ion-card-header>
+      <ng-container *ngFor="let question of list; let i = index">
+      <ion-card-content >
+        <!-- Desplegar el cuestionario por medio de un for -->
+        <p  class="custom-text centered">{{ i + 1 }}. {{ question.text }}</p>
+        <p>Seleccione una opción </p>
+        <p class="custom-text" *ngIf="question.audio_text !== null && question.options === null">
+           {{ question.audio_text }}
+        </p>
+        <ion-item class="transparent-item" *ngFor="let option of question.options">
+          <label for="option-{{i}}-{{option}}">{{ option }}</label>
+          <ion-checkbox slot="start" id="option-{{i}}-{{option}}" (ionChange)="onCheckboxChange($event)"></ion-checkbox>
+        </ion-item>
+       <br>
+      </ion-card-content>
+    </ng-container>
+    <ion-button expand="block" class="red">Guardar</ion-button>
+    </ion-card>
+
+</ion-content>

@@ -1,0 +1,44 @@
+ion-card-title{
+  font-size: 1.4rem;
+  text-align: center;
+}
+ion-toolbar ion-title{
+  font-size: 1rem;
+}
+ion-card-content h1{
+  color: white;
+  font-weight: bold;
+}
+ion-card-content p{
+  color: white;
+}
+ion-item{
+  --background: transparent;
+  --box-shadow: none;
+  padding-top: 1rem;
+}
+.red{
+  --background: #832C3D;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}.viewed {
+  /* Estilos para el estado "VIEWED" */
+  background-color:  #99ddc2;
+  border: 2px solid #99ddc2;
+}
+.viewed-label {
+  color: #99ddc2; /* Color específico para el texto "Revisado" */
+}
+
+.pending-label{
+  color: yellow;
+}
+.pending {
+  /* Estilos para el estado "PENDING" */
+  background-color: yellow;
+  border: 2px solid yellow;
+}
+.centerd{
+  justify-content: center;
+  align-items: center;
+}

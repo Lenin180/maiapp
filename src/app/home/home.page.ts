@@ -12,41 +12,42 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  
+
 })
 export class HomePage implements OnInit {
-  
+
   email!: string;
-  password!: string; 
+  password!: string;
   route!:Router;
   id!: String;
   fullname!: string;
   emailU!: string;
 
   constructor(private http:HttpClient, private router: Router, private cookieService: CookieService,  private activatedRoute: ActivatedRoute) {
-    
+
   }
 
   ionViewDidEnter() {
     // Llama al método que deseas ejecutar siempre al mostrar la página
-   
+    this.cookieService.deleteAll();
+
   }
 
-  
- 
 
-  
+
+
+
    public login() {
 
-    
-    
+
+
     const url = 'https://platform-api.aaaimx.org/api/v1/token/'; // Reemplaza con la URL de tu API de inicio de sesión
-  
+
     const body = {
       email: this.email,
       password: this.password,
     };
-  
+
     this.http.post(url, body).subscribe(
       (response: any) => {
         // Lógica para manejar la respuesta exitosa
@@ -64,14 +65,14 @@ export class HomePage implements OnInit {
         this.cookieService.set('user_id', id);
         //this.cookieService.set('fullnameU', fullname);
         this.cookieService.set('emailU', emailU);
-        
-        
 
-       
+
+
+
         this.getUserData();
-        this.router.navigate(['/inicio']);
-        
-        
+        this.navegarDespuesDeEsperar();
+
+
       },
       (response) => {
         if (response) {
@@ -82,27 +83,33 @@ export class HomePage implements OnInit {
     );
 
   }
-  
- 
+
+
+  navegarDespuesDeEsperar(): void {
+    setTimeout(() => {
+      this.router.navigate(['/inicio']);
+    }, 2000); // 2000 milisegundos = 2 segundos
+  }
+
 
   public guardarDatosJWT(access: string, refresh: string): void {
     //Guardar en el local
     localStorage.setItem('access_token', access);
     this.cookieService.set('access_tokenk', access);
     localStorage.setItem('refresh_token', refresh);
-    
+
     // imprimir
     //console.log('access Token:', access);
     //console.log('Refresh Token:', refresh);
   }
 
-  public getUserData() {
-    
+ public getUserData() {
+
     const id = this.cookieService.get('user_id');
     const url = `https://platform-api.aaaimx.org/api/v1/users/me/`;
-    console.log('user_id', id);
+    //console.log('user_id', id);
     // Obtener el token de acceso del almacenamiento local
-    const accessToken = localStorage.getItem('access_token');   
+    const accessToken = localStorage.getItem('access_token');
     //console.log('Access Token:', accessToken);
     const body = {
       id: id,
@@ -114,7 +121,7 @@ export class HomePage implements OnInit {
       const headers = new HttpHeaders({
         'Authorization': `Bearer ${accessToken}`
       });
-  
+
       this.http.get(url, { headers }).subscribe(
         (response: any) => {
           // Lógica para manejar la respuesta exitosa
@@ -125,27 +132,60 @@ export class HomePage implements OnInit {
           if (occupation === 'STUDENT') {
             occupation= 'Estudiante';
           }
-          console.log('Ocupacion:', occupation);
+          //console.log('Ocupacion:', occupation);
           this.cookieService.set('Ocupacion', occupation);
 
-          //este es para entrar a un apartado en especifico 
+          //este es para entrar a un apartado en especifico
           //
           let career = response.student.career;
           if (career === 'ISC') {
             career = 'Ingeniería en Sistemas Computacionales';
           }
-          console.log('Carrera:', career);
-          this.cookieService.set('Carrera', career);
+          if (career === 'IGE') {
+            career = 'Ingeniería en Gestión Empresarial';
+          }
+          if (career === 'IA') {
+            career = 'Ingeniería Ambiental';
+          }
+          if (career === 'IBQ') {
+            career = 'Ingeniería Bioquímica';
+          }
+          if (career === 'IBM') {
+            career = 'Ingeniería Biomédica';
+          }
+          if (career === 'IQ') {
+            career = 'Ingeniería Química';
+          }
+          if (career === 'IELE') {
+            career = 'Ingeniería Eléctrica';
+          }
+          if (career === 'IELC') {
+            career = 'Ingeniería Electrónica';
+          }
+          if (career === 'IM') {
+            career = 'Ingeniería Mecánica';
+          }
+          if (career === 'IC') {
+            career = 'Ingeniería Civil';
+          }
+          if (career === 'II') {
+            career = 'Ingeniería Industrial';
+          }
+          if (career === 'LA') {
+            career = 'Licenciatura en Administración';
+          }
+          //console.log('Carrera:', career);
+          this.cookieService.set('Carrera:', career);
           //especialidad
           const specialty = response.student.specialty;
-          console.log('Especialidad:', specialty);
+          //console.log('Especialidad:', specialty);
           this.cookieService.set('Especialidad', specialty);
           //ingreso
           const admission = response.student.admission;
-          console.log('ingreso:', admission);
+          //console.log('ingreso:', admission);
           this.cookieService.set('Ingreso', admission);
 
-          //nombre 
+          //nombre
           const full_name = response.full_name ;
           console.log('Nombres', full_name );
           this.cookieService.set('Nombres', full_name);
@@ -156,33 +196,14 @@ export class HomePage implements OnInit {
           console.log('Ap2', second_lastname);
           this.cookieService.set('Ape2', second_lastname);
 
-          //CURP
-          const CURP = response.CURP;
-          this.cookieService.set('CURP', CURP);
-  
-          //NSS
-          const NSS = response.NSS;
-          this.cookieService.set('NSS', NSS);
-          const phone = response.phone;
-          this.cookieService.set('Phone', phone);
-          const address = response.address;
-          this.cookieService.set('Address',address);
-          const postal_code = response.postal_code;
-          this.cookieService.set('Pcode',postal_code);
-          const personal_email = response.personal_email;
-          this.cookieService.set('PersonalMail',personal_email);
-          const religion = response.religion;
-          this.cookieService.set('Religion',religion);
-          const weight = response.weight;
-          this.cookieService.set('Weight',weight);
-          const height = response.height;
-          this.cookieService.set('Height',height);
-          const gender = response.gender;
-          this.cookieService.set('Gender',gender);
-          const marital_status = response.marital_status;
-          this.cookieService.set('MaritalS',marital_status);
-          const enrollment = response.enrollment;
-          this.cookieService.set('Enrol',enrollment);
+
+
+
+
+
+
+
+
         },
         (error) => {
           // Lógica para manejar el error
@@ -193,10 +214,19 @@ export class HomePage implements OnInit {
       console.log('No se encontró el token de acceso');
     }
   }
-  
+
   ngOnInit() {
-    
+
   }
 
-  
+  getCareerName(career: string): string {
+    if (career === 'ISC') {
+      return 'Ingeniería en Sistemas Computacionales';
+    } else {
+      return career;
+    }
+  }
+
+
 }
+

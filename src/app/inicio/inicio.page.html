@@ -1,11 +1,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <ion-header [translucent]="true">
   <ion-toolbar>
+
+    <!-- <ion-title>inicio</ion-title> -->
+
     <ion-buttons slot="end">
       <ion-button color="primary" (click)="logout()">Cerrar sesión&nbsp;
         <ion-icon name="log-out-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
@@ -19,13 +23,15 @@
   </div>
   <ion-card color="light" class="">
     <ion-card-content class="ion-text-center">
-      <p cl><ion-icon name="person-outline"></ion-icon>&nbsp;{{ full_name  }}  {{ first_lastname }} {{ second_lastname }}</p> 
+      <p cl><ion-icon name="person-outline"></ion-icon>&nbsp;{{ full_name  }}  {{ first_lastname }} {{ second_lastname }}</p>
       <p><ion-icon name="mail-outline"></ion-icon>&nbsp;{{ emailU }}</p>
-      <p><ion-icon name="construct-outline"></ion-icon>&nbsp;{{ career}}</p>
-      <p><ion-icon name="color-wand-outline"></ion-icon>&nbsp;{{ admission}}° Ingreso </p>
+      <p><ion-icon name="construct-outline"></ion-icon>&nbsp;{{career}}</p>
+      <p><ion-icon name="color-wand-outline"></ion-icon>&nbsp;{{ admission}}°Ingreso </p>
       <p><ion-chip>{{occupation}}</ion-chip><ion-chip>{{specialty}}</ion-chip></p>
+
     </ion-card-content>
   </ion-card>
+
   <ion-grid>
     <ion-row class="ion-justify-content-center">
       <ion-col size="5">
@@ -37,7 +43,7 @@
       </ion-col>
       <ion-col size="5">
         <button (click)="redirectToUrl()" class="hbutton" color="primary">
-          <ion-icon class="isize" name="file-tray-full-outline"></ion-icon> 
+          <ion-icon class="isize" name="file-tray-full-outline"></ion-icon>
           <br />
           <span class="colorw">Banco de proyectos</span>
         </button>
@@ -45,7 +51,7 @@
     </ion-row>
     <ion-row class="ion-justify-content-center">
       <ion-col size="5">
-          <button  (click)="redirectToCuest()"class="hbutton" color="primary">
+          <button (click)="redirecToCues()" class="hbutton" color="primary">
             <ion-icon class="isize" name="book-outline"></ion-icon>
           <br />
           <span class="colorw">Cuestionarios</span>
@@ -53,11 +59,14 @@
       </ion-col>
       <ion-col size="5">
         <button (click)="redirecToEdit()" class="hbutton" color="primary">
-          <ion-icon  class="isize" name="person-add-outline"></ion-icon>
+          <ion-icon class="isize" name="pencil-outline"></ion-icon>
         <br />
-        <span class="colorw">Más información</span>
+        <span class="colorw">Editar perfil</span>
         </button>
       </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
+
+
+

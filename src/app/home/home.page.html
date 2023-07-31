@@ -1,17 +1,18 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+
 <ion-content>
   <div class="padt">
-    <h1 class="pd">MAIA PLATFORM</h1>
-    <h3 class="pd2">Bienvenido de vuelta</h3>
+    <ion-img src="assets/Logo.png"></ion-img>
+    <h3 class="pd2 ion-text-center">Bienvenido de vuelta</h3>
   </div>
+
   <ion-card color="light">
     <ion-card-header>
       <ion-card-title>Correo electrónico</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-item fill="outline">
-          <ion-input type="email" [(ngModel)]="email" [clearInput]="true"></ion-input>
-        <ion-note slot="error">Email inválido</ion-note>
+          <ion-input type="email" [(ngModel)]="email"  errorText="Email inválido" email></ion-input>
       </ion-item>
     </ion-card-content>
     <ion-card-header>
@@ -19,7 +20,7 @@
     </ion-card-header>
     <ion-card-content>
       <ion-item fill="outline">
-          <ion-input type="password" [(ngModel)]="password" [clearInput]="true"></ion-input>
+          <ion-input type="password" [(ngModel)]="password"></ion-input>
         <ion-note slot="error">Email inválido</ion-note>
       </ion-item>
     </ion-card-content>
@@ -33,4 +34,5 @@
       </ion-item>
     </ion-card-content>
   </ion-card>
+
 </ion-content>

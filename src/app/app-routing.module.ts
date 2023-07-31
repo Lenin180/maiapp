@@ -15,10 +15,11 @@ const routes: Routes = [
     path: 'inicio',
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
   },
-  { ///ruta creditos 
+  { ///ruta creditos
     path: 'creditos',
     loadChildren: () => import('./creditos/creditos.module').then( m => m.CreditosPageModule)
-  },  {
+  },
+  {
     path: 'editar-perfil',
     loadChildren: () => import('./editar-perfil/editar-perfil.module').then( m => m.EditarPerfilPageModule)
   },
@@ -27,7 +28,12 @@ const routes: Routes = [
     loadChildren: () => import('./cuestionarios/cuestionarios.module').then( m => m.CuestionariosPageModule)
   },
 
-  
+  {
+    path: 'cuestionariox',
+    loadChildren: () => import('./cuestionarios/cuestionariox/cuestionariox.module').then(m => m.CuestionarioxPageModule)
+  },
+
+
 ];
 
 @NgModule({

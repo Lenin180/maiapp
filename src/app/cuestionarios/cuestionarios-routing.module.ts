@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: CuestionariosPage
+  },
+  {
+    path: 'cuestionariox',
+    loadChildren: () => import('./cuestionariox/cuestionariox.module').then( m => m.CuestionarioxPageModule)
+  },
+  {
+    path: 'cuestionariox',
+    loadChildren: () => import('./cuestionariox/cuestionariox.module').then( m => m.CuestionarioxPageModule)
   }
 ];
 

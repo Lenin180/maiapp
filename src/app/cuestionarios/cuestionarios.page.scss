@@ -13,7 +13,7 @@ ion-card-content p{
     color: white;
 }
 .red{
-    background-color: #801E18;;
+    background-color: #832C3D;
 }.viewed {
     /* Estilos para el estado "VIEWED" */
     background-color:  #99ddc2;
@@ -35,3 +35,9 @@ ion-card-content p{
     justify-content: center;
     align-items: center;
 }
+.padl{
+  padding-left: 1rem;
+  margin-bottom: 1.2rem;
+  --background: #832C3D;
+}
+

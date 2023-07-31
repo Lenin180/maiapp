@@ -4,35 +4,70 @@
       <ion-back-button defaultHref="inicio" text="Regresar"> </ion-back-button>
       </ion-button>
   </ion-toolbar>
+
 </ion-header>
+
 <ion-content [fullscreen]="true">
   <ion-card class="red">
     <ion-card-content>
-      <h1>Mis cuestionarios</h1>
-      <p>Aquí podrás encontrar tus cuestionarios y encuestas respondidas.  <b>Verifica que los datos de perfil estén correctos y actualizados.</b></p>
+      <h1 class="ion-title">Mis cuestionarios</h1>
+      <p>Aquí podrás encontrar los cuestionarios que estén disponibles.</p>
     </ion-card-content>
   </ion-card>
-  <h2 class="ion-text-center"><b>Selecciona el cuestionario que deseas contestar</b></h2>
-  <ion-card>
-    <ion-card-content>
-      <ion-grid>
-        <ion-row class="centerd">
-          <ion-list>
-            <ion-item>
-              <ion-select label="Filtrar por" placeholder="ID">
-                <ion-select-option value="ID">ID</ion-select-option>
-                <ion-select-option value="Cuestionario">Cuestionario</ion-select-option>
-                <ion-select-option value="Descripcion">Descripción</ion-select-option>
-                <ion-select-option value="Fecha">Fecha</ion-select-option>
-              </ion-select>
-            </ion-item>
-          </ion-list>
-        </ion-row> <br>
-        <ion-row class="ion-text-justify">
-          <ion-col size="5"><b>Cuestionario</b></ion-col>
-          <ion-col size="5"><b>Descripción</b></ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card-content>
+
+
+  <ion-content>
+    <p class="ion-text-center">Selecciona el cuestionario que deseas contestar</p> <!-- Si lo cambio por responseData si genera segun los resultados  {{ list[0].name }} -->
+    <!--<ion-card *ngIf="responseData && responseData.length != 0"> Para que muestre solo 1 vez x parametro aunque el array dentro de responseData sea de 4-->
+      <ion-card *ngIf="list && list.length !== 0 && list[0]?.name">  <!-- Se puede desplegar con response.Data para desplegar quest especificos -->
+
+      <!--  -->
+      <ion-card-header>
+        <ion-card-title class="ion-text-start">{{ list[0].name }}</ion-card-title>
+
+      </ion-card-header>
+      <!-- Boton para redireccionar-->
+      <ion-button class="ion-text-center padl" (click)="gotocuest0()">Responder</ion-button>
   </ion-card>
+
+  <!-- Questionario dentro del this.list en el espacio 1  (checar respuesta de array this.list)-->
+  <ion-card *ngIf="list && list.length !== 0 && list[1]?.name">
+    <!--  -->
+    <ion-card-header>
+      <ion-card-title class="ion-text-start">{{ list[1].name }}</ion-card-title>
+
+    </ion-card-header>
+    <!-- Agrega aquí el contenido adicional que desees mostrar para cada item -->
+    <ion-button class="ion-text-center padl" (click)="gotocuest1()">Responder</ion-button>
+
+</ion-card>
+
+ <!-- Questionario dentro del this.list en el espacio 2  -->
+<ion-card *ngIf="list && list.length !== 0 && list[2]?.name">
+  <!--  -->
+  <ion-card-header>
+    <ion-card-title class="ion-text-start">{{ list[2].name }}</ion-card-title>
+
+  </ion-card-header>
+
+  <ion-button class="ion-text-center padl" (click)="gotocuest2()">Responder</ion-button>
+
+</ion-card>
+
+<!-- Questionario dentro del this.list en el espacio 3  -->
+<ion-card *ngIf="list && list.length !== 0 && list[3]?.name">
+  <!--  -->
+  <ion-card-header>
+    <ion-card-title class="ion-text-start">{{ list[3].name }}</ion-card-title>
+
+  </ion-card-header>
+
+  <ion-button class="ion-text-center padl" (click)="gotocuest3()">Responder</ion-button>
+
+</ion-card>
+
+
+  </ion-content>
+
+
 </ion-content>
