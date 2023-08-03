@@ -6,7 +6,6 @@
   </ion-toolbar>
 
 </ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-card class="red">
     <ion-card-content>
@@ -17,27 +16,21 @@
   <ion-card>
     <ion-card-content>
       <form action="">
-
         <ion-card-header>
           <ion-card-title>
             Crédito complementario 1
           </ion-card-title>
         </ion-card-header>
-
         <ion-card [ngClass]="{ 'viewed': status_credit_1 === 'VIEWED', 'pending': status_credit_1 === 'PENDING' && name_credit_1 !== null && description_credit_1 !== null && url_evidence_credit_1 !== null && value_credit_1 !== null }">
-
         <ion-item lines="full">
           <ion-label position="stacked">Actividad</ion-label>
           <!-- En el cred 1 nunca va a regresar null, siempre "", en los demas necesitamos la condicion null -->
           <ion-input [(ngModel)]="name_credit_1" [disabled]="status_credit_1 === 'VIEWED'" name="name_credit_1"></ion-input>
-
         </ion-item>
-
         <ion-item lines="full">
           <ion-label position="stacked">Descripción</ion-label>
           <ion-input [(ngModel)]="description_credit_1" [disabled]="status_credit_1 === 'VIEWED'"  name="description_credit_1"></ion-input>
         </ion-item>
-
         <ion-item lines="full">
           <ion-label position="stacked">Evidencia</ion-label>
           <ion-input [(ngModel)]="url_evidence_credit_1" [disabled]="status_credit_1 === 'VIEWED'" name="url_evidence_credit_1"></ion-input>
@@ -51,7 +44,6 @@
             <ion-select-option value="2">2</ion-select-option>
           </ion-select>
         </ion-item>
-
         <ion-item >
           <ion-icon name="checkmark-circle-outline" style="color:#99ddc2;" slot="end" *ngIf="status_credit_1.includes('VIEWED')"></ion-icon>
           <ion-label *ngIf="status_credit_1.includes('VIEWED')" class="viewed-label">Revisado</ion-label>
@@ -59,7 +51,6 @@
           <ion-label *ngIf="status_credit_1.includes('PENDING')" class="pending-label">Pendiente</ion-label>
         </ion-item>
         </ion-card>
-
         <ion-card-header>
           <ion-card-title>
             Crédito complementario 2
@@ -71,16 +62,13 @@
             <ion-label position="stacked">Actividad</ion-label>
             <ion-input [(ngModel)]="name_credit_2" [disabled]="status_credit_2 === 'VIEWED'" name="name_credit_2" ></ion-input>
           </ion-item>
-
         <ion-item lines="full">
           <ion-label position="stacked">Descripción</ion-label>
-
           <ion-input [(ngModel)]="description_credit_2" [disabled]="status_credit_2 === 'VIEWED'" name="description_credit_2"></ion-input>
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Evidencia</ion-label>
           <ion-input [(ngModel)]="url_evidence_credit_2 " [disabled]="status_credit_2 === 'VIEWED' " name="url_evidence_credit_2"></ion-input>
-
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Créditos</ion-label>
@@ -99,9 +87,6 @@
           <ion-label *ngIf="status_credit_2.includes('ERASER')" class="pending-label " style="color:white"></ion-label>
         </ion-item>
         </ion-card>
-
-
-
         <ion-card-header>
           <ion-card-title>
             Crédito complementario 3
@@ -113,16 +98,13 @@
             <ion-label position="stacked">Actividad</ion-label>
             <ion-input [(ngModel)]="name_credit_3" [disabled]="status_credit_3 === 'VIEWED'" name="name_credit_3" ></ion-input>
           </ion-item>
-
         <ion-item lines="full">
           <ion-label position="stacked">Descripción</ion-label>
-
           <ion-input [(ngModel)]="description_credit_3" [disabled]="status_credit_3 === 'VIEWED' " name="description_credit_3"></ion-input>
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Evidencia</ion-label>
           <ion-input [(ngModel)]="url_evidence_credit_3 " [disabled]="status_credit_3 === 'VIEWED' " name="url_evidence_credit_3"></ion-input>
-
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Créditos</ion-label>
@@ -141,7 +123,6 @@
           <ion-label *ngIf="status_credit_3.includes('ERASER')" class="pending-label " style="color:white"></ion-label>
         </ion-item>
         </ion-card>
-
         <ion-card-header>
           <ion-card-title>
             Crédito complementario 4
@@ -153,16 +134,13 @@
             <ion-label position="stacked">Actividad</ion-label>
             <ion-input [(ngModel)]="name_credit_4 " [disabled]="status_credit_4 === 'VIEWED'" name="name_credit_4"></ion-input>
           </ion-item>
-
         <ion-item lines="full">
           <ion-label position="stacked">Descripción</ion-label>
-
           <ion-input [(ngModel)]="description_credit_4  " [disabled]="status_credit_4 === 'VIEWED' " name="description_credit_4"></ion-input>
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Evidencia</ion-label>
           <ion-input [(ngModel)]="url_evidence_credit_4 " [disabled]="status_credit_4 === 'VIEWED' " name="url_evidence_credit_4"></ion-input>
-
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Créditos</ion-label>
@@ -181,7 +159,6 @@
           <ion-label *ngIf="status_credit_4.includes('ERASER')" class="pending-label " style="color:white"></ion-label>
         </ion-item>
         </ion-card>
-
         <ion-card-header>
           <ion-card-title>
             Crédito complementario 5
@@ -193,16 +170,13 @@
             <ion-label position="stacked">Actividad</ion-label>
             <ion-input  [(ngModel)]="name_credit_5 " [disabled]="status_credit_5 === 'VIEWED' " name="name_credit_5"></ion-input>
           </ion-item>
-
         <ion-item lines="full">
           <ion-label position="stacked">Descripción</ion-label>
-
           <ion-input [(ngModel)]="description_credit_5 " [disabled]="status_credit_5 === 'VIEWED' " name="description_credit_5"></ion-input>
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Evidencia</ion-label>
           <ion-input [(ngModel)]="url_evidence_credit_5 " [disabled]="status_credit_5 === 'VIEWED' " name="url_evidence_credit_5"></ion-input>
-
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Créditos</ion-label>
@@ -221,29 +195,24 @@
           <ion-label *ngIf="status_credit_5.includes('ERASER')" class="pending-label " style="color:white"></ion-label>
         </ion-item>
         </ion-card>
-
         <!-- Si la variable name_credit_7 es diferente de null se muestra (si es null no se muestra) -->
         <ion-card-header *ngIf="value_credit_6 !== 'null' && value_credit_6 !== '' ">
           <ion-card-title>
             Crédito complementario 6
           </ion-card-title>
         </ion-card-header>
-
         <ion-card  *ngIf="value_credit_6 !== 'null' && value_credit_6 !== ''  " [ngClass]="{ 'viewed': status_credit_6 === 'VIEWED', 'pending': status_credit_6 === 'PENDING' && name_credit_6 !== ''  && description_credit_6 !== ''  && url_evidence_credit_6 !== ''  && value_credit_6 !== ''}">
           <ion-item lines="full">
             <ion-label position="stacked">Actividad</ion-label>
             <ion-input [(ngModel)]="name_credit_6 " [disabled]="status_credit_6 === 'VIEWED'" name="name_credit_6"></ion-input>
           </ion-item>
-
         <ion-item lines="full">
           <ion-label position="stacked">Descripción</ion-label>
-
           <ion-input [(ngModel)]="description_credit_6 " [disabled]="status_credit_6 === 'VIEWED' " name="description_credit_6"></ion-input>
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Evidencia</ion-label>
           <ion-input [(ngModel)]="url_evidence_credit_6 " [disabled]="status_credit_6 === 'VIEWED' " name="url_evidence_credit_6"></ion-input>
-
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Créditos</ion-label>
@@ -262,28 +231,23 @@
           <ion-label *ngIf="status_credit_6.includes('ERASER')" class="pending-label " style="color:white"></ion-label>
         </ion-item>
         </ion-card>
-
         <ion-card-header *ngIf="value_credit_7 !== 'null' && value_credit_7 !== '' ">
           <ion-card-title>
             Crédito complementario 7
           </ion-card-title>
         </ion-card-header>
-
         <ion-card  *ngIf="value_credit_7 !== 'null'  && value_credit_7 !== '' " [ngClass]="{ 'viewed': status_credit_7 === 'VIEWED', 'pending': status_credit_7 === 'PENDING' && name_credit_7 !== ''  && description_credit_7 !== ''  && url_evidence_credit_7 !== ''  && value_credit_7 !== '' }">
           <ion-item lines="full">
             <ion-label position="stacked">Actividad</ion-label>
             <ion-input [(ngModel)]="name_credit_7 " [disabled]="status_credit_7 === 'VIEWED'" name="name_credit_7"></ion-input>
           </ion-item>
-
         <ion-item lines="full">
           <ion-label position="stacked">Descripción</ion-label>
-
           <ion-input [(ngModel)]="description_credit_7 " [disabled]="status_credit_7 === 'VIEWED' " name="description_credit_7"></ion-input>
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Evidencia</ion-label>
           <ion-input [(ngModel)]="url_evidence_credit_7 " [disabled]="status_credit_7 === 'VIEWED' " name="url_evidence_credit_7"></ion-input>
-
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Créditos</ion-label>
@@ -302,28 +266,23 @@
           <ion-label *ngIf="status_credit_7.includes('ERASER')" class="pending-label " style="color:white"></ion-label>
         </ion-item>
         </ion-card>
-
         <ion-card-header *ngIf="value_credit_8 !== 'null'  && value_credit_8 !== ''">
           <ion-card-title>
             Crédito complementario 8
           </ion-card-title>
         </ion-card-header>
-
         <ion-card  *ngIf="value_credit_8 !== 'null'  && value_credit_8 !== '' " [ngClass]="{ 'viewed': status_credit_8 === 'VIEWED', 'pending': status_credit_8 === 'PENDING' && name_credit_8 !== ''  && description_credit_8 !== ''  && url_evidence_credit_8 !== ''  && value_credit_8 !== ''}">
           <ion-item lines="full">
             <ion-label position="stacked">Actividad</ion-label>
             <ion-input [(ngModel)]="name_credit_8 " [disabled]="status_credit_8 === 'VIEWED'"  name="name_credit_8"></ion-input>
           </ion-item>
-
         <ion-item lines="full">
           <ion-label position="stacked">Descripción</ion-label>
-
           <ion-input [(ngModel)]="description_credit_8 " [disabled]="status_credit_8 === 'VIEWED' " name="description_credit_8"></ion-input>
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Evidencia</ion-label>
           <ion-input [(ngModel)]="url_evidence_credit_8 " [disabled]="status_credit_8 === 'VIEWED' " name="url_evidence_credit_8"></ion-input>
-
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Créditos</ion-label>
@@ -342,29 +301,23 @@
           <ion-label *ngIf="status_credit_8.includes('ERASER')" class="pending-label " style="color:white"></ion-label>
         </ion-item>
         </ion-card>
-
-
         <ion-card-header *ngIf="value_credit_9 !== 'null'  && value_credit_9 !== '' ">
           <ion-card-title>
             Crédito complementario 9
           </ion-card-title>
         </ion-card-header>
-
         <ion-card  *ngIf="value_credit_9 !== 'null' && value_credit_9 !== '' " [ngClass]="{ 'viewed': status_credit_9 === 'VIEWED', 'pending': status_credit_9 === 'PENDING' && name_credit_9 !== ''  && description_credit_9 !== ''  && url_evidence_credit_9 !== ''  && value_credit_9 !== '' }">
           <ion-item lines="full">
             <ion-label position="stacked">Actividad</ion-label>
             <ion-input [(ngModel)]="name_credit_9 " [disabled]="status_credit_9 === 'VIEWED'" name="name_credit_9"></ion-input>
           </ion-item>
-
         <ion-item lines="full">
           <ion-label position="stacked">Descripción</ion-label>
-
           <ion-input [(ngModel)]="description_credit_9  " [disabled]="status_credit_9 === 'VIEWED' " name="description_credit_9"></ion-input>
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Evidencia</ion-label>
           <ion-input [(ngModel)]="url_evidence_credit_9 " [disabled]="status_credit_9 === 'VIEWED' " name="url_evidence_credit_9"></ion-input>
-
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Créditos</ion-label>
@@ -383,28 +336,23 @@
           <ion-label *ngIf="status_credit_9.includes('ERASER')" class="pending-label " style="color:white"></ion-label>
         </ion-item>
         </ion-card>
-
         <ion-card-header *ngIf="value_credit_10 !== 'null' && value_credit_10 !== '' ">
           <ion-card-title>
             Crédito complementario 10
           </ion-card-title>
         </ion-card-header>
-
         <ion-card  *ngIf="value_credit_10 !== 'null' && value_credit_10 !== '' " [ngClass]="{ 'viewed': status_credit_10 === 'VIEWED', 'pending': status_credit_10 === 'PENDING' && name_credit_10 !== ''  && description_credit_10 !== ''  && url_evidence_credit_10 !== ''  && value_credit_10 !== ''}">
           <ion-item lines="full">
             <ion-label position="stacked">Actividad</ion-label>
             <ion-input [(ngModel)]="name_credit_10 " [disabled]="status_credit_10 === 'VIEWED'" name="name_credit_10"></ion-input>
           </ion-item>
-
         <ion-item lines="full">
           <ion-label position="stacked">Descripción</ion-label>
-
           <ion-input [(ngModel)]="description_credit_10  " [disabled]="status_credit_10 === 'VIEWED' " name="description_credit_10"></ion-input>
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Evidencia</ion-label>
           <ion-input [(ngModel)]="url_evidence_credit_10 " [disabled]="status_credit_10 === 'VIEWED' " name="url_evidence_credit_10"></ion-input>
-
         </ion-item>
         <ion-item lines="full">
           <ion-label position="stacked">Créditos</ion-label>
@@ -443,6 +391,5 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-
   </ion-card>
 </ion-content>

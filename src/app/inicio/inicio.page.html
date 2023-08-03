@@ -1,15 +1,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <ion-header [translucent]="true">
   <ion-toolbar>
-
-    <!-- <ion-title>inicio</ion-title> -->
-
     <ion-buttons slot="end">
       <ion-button color="primary" (click)="logout()">Cerrar sesión&nbsp;
         <ion-icon name="log-out-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
@@ -28,10 +24,8 @@
       <p><ion-icon name="construct-outline"></ion-icon>&nbsp;{{career}}</p>
       <p><ion-icon name="color-wand-outline"></ion-icon>&nbsp;{{ admission}}°Ingreso </p>
       <p><ion-chip>{{occupation}}</ion-chip><ion-chip>{{specialty}}</ion-chip></p>
-
     </ion-card-content>
   </ion-card>
-
   <ion-grid>
     <ion-row class="ion-justify-content-center">
       <ion-col size="5">

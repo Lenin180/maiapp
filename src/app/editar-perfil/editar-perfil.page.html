@@ -5,7 +5,6 @@
       </ion-button>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-card class="red">
     <ion-card-content>
@@ -39,7 +38,6 @@
       <ion-item lines="full">
         <ion-label position="stacked">Teléfono</ion-label>
         <ion-input type="tel" [(ngModel)]=" phone " pattern=".{10}" minlength="10" maxlength="10" required></ion-input>
-
       </ion-item>
       <ion-item lines="full">
         <ion-label position="stacked">Fecha de nacimiento y hora</ion-label>
@@ -62,14 +60,11 @@
         <ion-label position="stacked">NSS (Opcional)</ion-label>
         <ion-input [(ngModel)]="NSS" pattern=".{11}" minlength="11" maxlength="11" required></ion-input>
       </ion-item>
-
-
       <ion-card-header>
         <ion-card-title class="ion-text-center">
           Datos personales
         </ion-card-title>
       </ion-card-header>
-
       <ion-item lines="full">
         <ion-label position="stacked">Sexo</ion-label>
         <ion-select [(ngModel)]="gender">
@@ -77,7 +72,6 @@
           <ion-select-option value="F">Mujer</ion-select-option>
         </ion-select>
       </ion-item>
-
       <ion-item lines="full">
         <ion-label position="stacked">Estado civil</ion-label>
         <ion-select [(ngModel)]="marital_status">
@@ -98,7 +92,6 @@
         <ion-input [(ngModel)]="personal_email"></ion-input>
         <ion-note slot="error">Email inválido</ion-note>
       </ion-item>
-
       <ion-item lines="full">
         <ion-label position="stacked">Te consideras:</ion-label>
         <ion-select [(ngModel)]="religion">
@@ -109,7 +102,6 @@
           <ion-select-option value="Espiritual no religioso">Espiritual no religioso</ion-select-option>
         </ion-select>
       </ion-item>
-
       <ion-item lines="full">
         <ion-label position="stacked">Peso</ion-label>
         <ion-input [(ngModel)]="weight" pattern=".{3}" minlength="3" maxlength="3"></ion-input>
@@ -128,7 +120,6 @@
         <ion-input [(ngModel)]="hobbies" name="hobbies"></ion-input>
       </ion-item>
        -->
-
       <ion-item lines="full">
         <ion-label position="stacked">Trabajas actualmente</ion-label>
         <ion-select [(ngModel)]="has_job">
@@ -136,7 +127,6 @@
           <ion-select-option value="false">No</ion-select-option>
         </ion-select>
       </ion-item>
-
       <ion-item lines="full">
         <ion-label position="stacked">¿Hablas alguna lengua indígena?</ion-label>
         <ion-select [(ngModel)]="is_native">
@@ -144,7 +134,6 @@
           <ion-select-option value="false">No</ion-select-option>
         </ion-select>
       </ion-item>
-
       <ion-card-header>
         <ion-card-title class="ion-text-center">
           Infomación escolar

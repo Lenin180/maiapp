@@ -7,8 +7,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" >
-
-
   <ion-header collapse="condense">
     <ion-card class="red">
       <ion-card-content>
@@ -16,12 +14,9 @@
       </ion-card-content>
     </ion-card>
   </ion-header>
-
     <ion-card *ngIf="list && list.length > 0">
       <ion-card-header>
-
       </ion-card-header>
-
       <ng-container *ngFor="let question of list; let i = index">
       <ion-card-content >
         <!-- Desplegar el cuestionario por medio de un for -->
@@ -37,14 +32,9 @@
         </ion-item>
        <br>
       </ion-card-content>
-
-
     </ng-container>
     </ion-card>
-
-
 </ion-content>
-
 <ion-footer [translucent]="true">
   <ion-toolbar class="ion-justify-content-center">
     <!-- Deshabilitar el botón cuando no todas las preguntas estén respondidas -->
