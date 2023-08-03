@@ -19,7 +19,7 @@
   <ion-content>
     <p class="ion-text-center">Selecciona el cuestionario que deseas contestar</p> <!-- Si lo cambio por responseData si genera segun los resultados  {{ list[0].name }} -->
     <!--<ion-card *ngIf="responseData && responseData.length != 0"> Para que muestre solo 1 vez x parametro aunque el array dentro de responseData sea de 4-->
-      <ion-card *ngIf="list && list.length !== 0 && list[0]?.name">  <!-- Se puede desplegar con response.Data para desplegar quest especificos -->
+      <ion-card class="fondo" *ngIf="list && list.length !== 0 && list[0]?.name">  <!-- Se puede desplegar con response.Data para desplegar quest especificos -->
 
       <!--  -->
       <ion-card-header>
@@ -31,7 +31,7 @@
   </ion-card>
 
   <!-- Questionario dentro del this.list en el espacio 1  (checar respuesta de array this.list)-->
-  <ion-card *ngIf="list && list.length !== 0 && list[1]?.name">
+  <ion-card class="fondo" *ngIf="list && list.length !== 0 && list[1]?.name">
     <!--  -->
     <ion-card-header>
       <ion-card-title class="ion-text-start">{{ list[1].name }}</ion-card-title>
@@ -43,7 +43,7 @@
 </ion-card>
 
  <!-- Questionario dentro del this.list en el espacio 2  -->
-<ion-card *ngIf="list && list.length !== 0 && list[2]?.name">
+<ion-card class="fondo" *ngIf="list && list.length !== 0 && list[2]?.name">
   <!--  -->
   <ion-card-header>
     <ion-card-title class="ion-text-start">{{ list[2].name }}</ion-card-title>
@@ -55,7 +55,7 @@
 </ion-card>
 
 <!-- Questionario dentro del this.list en el espacio 3  -->
-<ion-card *ngIf="list && list.length !== 0 && list[3]?.name">
+<ion-card class="fondo" *ngIf="list && list.length !== 0 && list[3]?.name">
   <!--  -->
   <ion-card-header>
     <ion-card-title class="ion-text-start">{{ list[3].name }}</ion-card-title>

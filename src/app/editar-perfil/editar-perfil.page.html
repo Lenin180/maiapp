@@ -9,8 +9,8 @@
 <ion-content [fullscreen]="true">
   <ion-card class="red">
     <ion-card-content>
-      <h1 class="ion-title">Más información</h1>
-      <p>Aquí podrás consultar más información de tu perfil de estudiante.</p>
+      <h1 class="ion-title">Editar perfil</h1>
+      <p>Aquí podrás consultar más información de tu perfil de estudiante, así como modificar tus datos.</p>
     </ion-card-content>
   </ion-card>
   <ion-card color="">
@@ -42,10 +42,20 @@
 
       </ion-item>
       <ion-item lines="full">
-        <ion-label position="stacked">Fecha de nacimiento</ion-label>
+        <ion-label position="stacked">Fecha de nacimiento y hora</ion-label>
         <ion-input [(ngModel)]="birthday" (click)="toggleDatetimePicker()"></ion-input>
-        <ion-datetime display-format="DD/MM/YYYY HH:mm" [(ngModel)]="birthday" *ngIf="showDatetimePicker" showDefaultButtons="true" cancelText="Cancelar" doneText="Listo">
-        </ion-datetime>
+        <ion-datetime
+        displayFormat="DD-MM-YYYY | HH:mm"
+        [(ngModel)]="selectedDateTime"
+        *ngIf="showDatetimePicker"
+        showDefaultButtons="true"
+        cancelText="Cancelar"
+        doneText="Listo"
+        (ionCancel)="onCancelDateTimePicker()"
+        (ionChange)="onDateTimePickerChange($event)"
+      >
+      </ion-datetime>
+      <ion-button (click)="openDatetimePicker()">Seleccionar fecha y hora</ion-button>
       </ion-item>
 
       <ion-item lines="full">

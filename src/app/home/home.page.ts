@@ -5,7 +5,7 @@ import jwt_decode from "jwt-decode";
 import { CookieService } from 'ngx-cookie-service';
 import { HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-
+import { AlertController } from '@ionic/angular';
 
 
 @Component({
@@ -23,7 +23,7 @@ export class HomePage implements OnInit {
   fullname!: string;
   emailU!: string;
 
-  constructor(private http:HttpClient, private router: Router, private cookieService: CookieService,  private activatedRoute: ActivatedRoute) {
+  constructor(private http:HttpClient, private router: Router, private cookieService: CookieService,  private activatedRoute: ActivatedRoute, private alertController: AlertController) {
 
   }
 
@@ -76,10 +76,11 @@ export class HomePage implements OnInit {
       },
       (response) => {
         if (response) {
-          console.log('Futuro pop-up para usuario no valido');
+          //console.log('Futuro pop-up para usuario no valido');
+          this.presentAlert();
         }
       }
-      
+
     );
 
   }
@@ -101,6 +102,17 @@ export class HomePage implements OnInit {
     // imprimir
     //console.log('access Token:', access);
     //console.log('Refresh Token:', refresh);
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Credenciales no válidas',
+      message: 'Presione "Aceptar" para volver a intentarlo',
+      buttons: ['Aceptar'],
+      cssClass: 'alert-button-confirm'
+    });
+
+    await alert.present();
   }
 
  public getUserData() {
@@ -131,6 +143,9 @@ export class HomePage implements OnInit {
           let occupation = response.occupation
           if (occupation === 'STUDENT') {
             occupation= 'Estudiante';
+          }
+          if (occupation === 'GRADUATED') {
+            occupation= 'Egresado';
           }
           //console.log('Ocupacion:', occupation);
           this.cookieService.set('Ocupacion', occupation);
@@ -229,4 +244,3 @@ export class HomePage implements OnInit {
 
 
 }
-

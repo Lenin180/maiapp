@@ -46,7 +46,7 @@ export class EditarPerfilPage {
   tutor!: string;
   uuid!: string;
 
-
+ selectedDateTime: string = '';
 
   constructor(private router: Router, private cookieService: CookieService, private http: HttpClient,private elementRef: ElementRef) {
 
@@ -90,7 +90,10 @@ export class EditarPerfilPage {
     // Llama al método que deseas ejecutar siempre al mostrar la página
    ///De momento esto se va a ejecutar cada que se entre aqui (para refrescar la tarjeta de inicio)
    //pero despues se debe ejecutar cuando se haga el PATCH de esta pag con 2s de delay
-
+  //  if (this.birthday) {
+  //   // Obtener solo la parte de la fecha (sin la hora)
+  //   this.birthday = this.birthday.split('T')[0];
+  // }
   }
 
 ///Esto se debe hacer con despues del PATCH para actualizar en inicio los cambios (se podria optimizar si solo se pasa el metodo, en vez de escribirlo todo otra vez)
@@ -298,6 +301,27 @@ export class EditarPerfilPage {
 
   toggleDatetimePicker() {
     this.showDatetimePicker = !this.showDatetimePicker;
+  }
+
+  openDatetimePicker() {
+    this.selectedDateTime = this.birthday; // Almacenar la fecha y hora actual en selectedDateTime
+    this.showDatetimePicker = true; // Mostrar el componente ion-datetime
+  }
+
+  closeDatetimePicker() {
+    this.showDatetimePicker = false; // Ocultar el componente ion-datetime
+  }
+
+  // Evento cuando se cancela la selección de fecha y hora
+  onCancelDateTimePicker() {
+    this.closeDatetimePicker(); // Cierra el componente ion-datetime sin cambios
+  }
+
+  // Evento cuando se selecciona una fecha y hora
+  onDateTimePickerChange(event: any) {
+    // Actualizar la variable birthday con la nueva fecha y hora seleccionada
+    this.birthday = this.selectedDateTime;
+    this.closeDatetimePicker(); // Cierra el componente ion-datetime
   }
 
 
